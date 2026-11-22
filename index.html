@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mocha Muse | Botanical Roastery & Café • Bidholi, Dehradun</title>
+  <title>Noir & Bean | Botanical Roastery & Café • Bidholi, Dehradun</title>
   <style>
     :root {
       --bg: #f6f7f2;
@@ -22,7 +22,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif; }
     body { background: var(--bg); color: var(--ink); line-height: 1.6; }
 
-    /* CENTERED EDITORIAL HEADER */
+    /* CENTERED EDITORIAL HEADER WITH N&B MONOGRAM LOGO */
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -35,13 +35,16 @@
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
     }
     .brand {
-      display: flex; align-items: center; gap: 10px; cursor: pointer;
+      display: flex; align-items: center; gap: 11px; cursor: pointer;
       font-weight: 800; font-size: 1.32rem; color: var(--forest); letter-spacing: -0.02em;
     }
-    .leaf-badge {
-      width: 34px; height: 34px; border-radius: 10px;
-      background: var(--forest); color: #e8f3ec;
-      display: grid; place-items: center; font-size: 1rem;
+    .nb-logo {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: linear-gradient(135deg, #1f3a2e, #3b6e57);
+      color: #f3ece1; border: 1.5px solid #d8c3a5;
+      display: grid; place-items: center;
+      font-weight: 900; font-size: 0.92rem; letter-spacing: 0.03em;
+      box-shadow: 0 4px 10px rgba(31, 58, 46, 0.22);
     }
     nav { display: flex; gap: 6px; flex-wrap: wrap; background: var(--tint); padding: 5px; border-radius: 14px; }
     .nav-btn {
@@ -101,7 +104,7 @@
     }
     .rib-icon {
       width: 38px; height: 38px; border-radius: 10px; background: var(--tint);
-      color: var(--forest); display: grid; place-items: center; font-weight: 800; flex-shrink: 0;
+      color: var(--forest); display: grid; place-items: center; font-weight: 800; flex-shrink: 0; font-size: 0.85rem;
     }
     .rib-item b { display: block; font-size: 0.96rem; color: var(--forest); }
     .rib-item span { font-size: 0.82rem; color: var(--muted); }
@@ -140,7 +143,7 @@
     .bill-card { background: var(--tint); border: 1px solid var(--border); padding: 15px; border-radius: 14px; margin-top: 12px; font-size: 0.94rem; line-height: 1.8; }
     .banner-ok { padding: 12px 14px; border-radius: 11px; margin-top: 12px; font-weight: 600; font-size: 0.88rem; background: #dcfce7; color: #166534; display: none; }
 
-    /* REDESIGNED MUSEPAY GATEWAY MODAL */
+    /* NOIRPAY GATEWAY MODAL */
     .modal { display: none; position: fixed; inset: 0; background: rgba(18, 32, 25, 0.76); backdrop-filter: blur(4px); z-index: 100; place-items: center; padding: 16px; overflow-y: auto; }
     .modal.open { display: grid; }
     .gw-box { background: var(--surface); border-radius: 22px; max-width: 470px; width: 100%; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.35); border: 1px solid var(--border); }
@@ -176,8 +179,8 @@
   <header>
     <div class="mast">
       <div class="brand" onclick="switchPage('home')">
-        <div class="leaf-badge">🌿</div>
-        <span>Mocha Muse</span>
+        <div class="nb-logo">N&amp;B</div>
+        <span>Noir &amp; Bean</span>
       </div>
       <nav>
         <button id="nav-home" class="nav-btn active" onclick="switchPage('home')">Home</button>
@@ -197,46 +200,46 @@
         <div>
           <span class="eyebrow">Main Bidholi Road, Near UPES Campus • Dehradun</span>
           <h1>Botanical Roasts, Matcha &amp; Artisanal Plates</h1>
-          <p>A serene sage-green coffee sanctuary right next to UPES Bidholi. Sip freshly brewed kulhad chai starting at ₹50, single-estate espresso, and warm sourdough bakes.</p>
+          <p>A serene sage-green coffee sanctuary right next to UPES Bidholi. Grab a ₹1 Melody toffee, ₹50 kulhad chai, single-estate espresso, and GST-free sourdough bakes.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
             <button class="btn btn-cream" onclick="switchPage('menu')">Explore Full Menu →</button>
             <button class="btn" style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.3)" onclick="switchPage('table')">🪑 Book a Table</button>
           </div>
         </div>
         <div class="arch-frame">
-          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Mocha Muse Botanical Cafe" />
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Noir and Bean Botanical Cafe" />
         </div>
       </div>
 
       <div class="ribbon">
-        <div class="rib-item"><div class="rib-icon">₹50</div><div><b>Student Value Menu</b><span>Fresh ginger-cardamom chai &amp; warm buns</span></div></div>
-        <div class="rib-item"><div class="rib-icon">🌱</div><div><b>100% Eco-Compostable</b><span>Plastic-free takeaway cups &amp; kraft boxes</span></div></div>
+        <div class="rib-item"><div class="rib-icon">₹1</div><div><b>₹1 Melody &amp; ₹50 Chai</b><span>Sweet counter treats &amp; student value menu</span></div></div>
+        <div class="rib-item"><div class="rib-icon">0%</div><div><b>100% GST-Free Billing</b><span>Pay exact menu prices with zero extra tax</span></div></div>
         <div class="rib-item"><div class="rib-icon">⚡</div><div><b>300 Mbps Study Pods</b><span>Quiet booths with charging near UPES</span></div></div>
-        <div class="rib-item"><div class="rib-icon">20%</div><div><b>Code: MOCHA20</b><span>Instant discount on orders ₹300 &amp; above</span></div></div>
+        <div class="rib-item"><div class="rib-icon">20%</div><div><b>Code: NOIR20</b><span>Instant discount on orders ₹300 &amp; above</span></div></div>
       </div>
 
       <div class="sec-head">
         <div>
-          <h2>Signature Creations at Mocha Muse</h2>
+          <h2>Signature Creations at Noir &amp; Bean</h2>
           <p>Tap any item below to add it straight to your order tray.</p>
         </div>
-        <button class="btn btn-ghost" onclick="switchPage('menu')">View All 12 Items</button>
+        <button class="btn btn-ghost" onclick="switchPage('menu')">View All 13 Items</button>
       </div>
 
       <div class="grid">
+        <div class="m-card">
+          <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80" alt="Melody Chocolaty Toffee" />
+          <div class="mc-body">
+            <div><span class="tag">Sweet Bite • ₹1</span><h3 style="margin-top:7px">Melody Chocolaty Toffee</h3><p class="meta">Classic caramel &amp; rich chocolaty center toffee—perfect sweet finisher after your brew.</p></div>
+            <div class="row" style="margin-top:8px"><span class="price">₹1</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(13)">Order • ₹1</button></div>
+          </div>
+        </div>
+
         <div class="m-card">
           <img src="https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80" alt="Adrak Elaichi Kulhad Chai" />
           <div class="mc-body">
             <div><span class="tag">Student Favorite • ₹50</span><h3 style="margin-top:7px">Adrak Elaichi Kulhad Chai</h3><p class="meta">Freshly crushed ginger, green cardamom &amp; Assam orthodox tea simmered in farm milk.</p></div>
             <div class="row" style="margin-top:8px"><span class="price">₹50</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(1)">Order • ₹50</button></div>
-          </div>
-        </div>
-
-        <div class="m-card">
-          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Belgian Chocolate Truffle Pastry" />
-          <div class="mc-body">
-            <div><span class="tag">Fresh Pastry • 1 Slice</span><h3 style="margin-top:7px">Belgian Chocolate Pastry</h3><p class="meta">Rich 70% dark cocoa sponge layered with silky chocolate ganache &amp; hazelnut crunch.</p></div>
-            <div class="row" style="margin-top:8px"><span class="price">₹135</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(6)">Order • ₹135</button></div>
           </div>
         </div>
 
@@ -250,12 +253,12 @@
       </div>
 
       <div class="panel two-col" style="margin-top:32px;align-items:center">
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Mocha Muse Roastery" style="width:100%;height:255px;object-fit:cover;border-radius:16px" />
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Noir and Bean Roastery" style="width:100%;height:255px;object-fit:cover;border-radius:16px" />
         <div>
           <span class="tag" style="margin-bottom:8px">Our Café Story</span>
           <h2 style="font-size:1.5rem;color:var(--forest);margin-bottom:10px">Where Botanical Calm Meets Single-Estate Coffee</h2>
-          <p class="meta" style="font-size:0.92rem;margin-bottom:10px">Mocha Muse was designed as a peaceful green retreat beside UPES Bidholi—a place where students can unwind over small-batch Chikmagalur roasts, ceremonial matcha, and warm pastries.</p>
-          <p class="meta" style="font-size:0.92rem;margin-bottom:16px">Every cup is brewed fresh to order and served in 100% plastic-free, biodegradable packaging.</p>
+          <p class="meta" style="font-size:0.92rem;margin-bottom:10px">Noir &amp; Bean was designed as a peaceful green retreat beside UPES Bidholi—a place where students can unwind over small-batch Chikmagalur roasts, ceremonial matcha, and warm pastries.</p>
+          <p class="meta" style="font-size:0.92rem;margin-bottom:16px">Every cup is brewed fresh to order with transparent GST-free pricing and 100% plastic-free, biodegradable packaging.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
             <button class="btn" onclick="switchPage('about')">Read Full Story</button>
             <button class="btn btn-ghost" onclick="switchPage('table')">Reserve Study Table</button>
@@ -268,20 +271,20 @@
     <section id="view-menu" class="page-view">
       <div class="sec-head">
         <div>
-          <h2>Explore Full Menu (Prices in ₹)</h2>
-          <p>Apply promo code <b>MOCHA20</b> in your tray on orders ₹300+ for 20% off.</p>
+          <h2>Explore Full Menu (Prices in ₹ • GST-Free)</h2>
+          <p>Apply promo code <b>NOIR20</b> in your tray on orders ₹300+ for 20% off.</p>
         </div>
       </div>
 
       <div class="filter-bar">
         <div class="pills">
-          <button class="pill active" onclick="filterCat('All', this)">All (12)</button>
+          <button class="pill active" onclick="filterCat('All', this)">All (13)</button>
           <button class="pill" onclick="filterCat('Coffee & Botanicals', this)">Coffee &amp; Botanicals</button>
           <button class="pill" onclick="filterCat('Pastries & Bakery', this)">Pastries &amp; Bakery</button>
           <button class="pill" onclick="filterCat('Sourdough Plates', this)">Sourdough Plates</button>
         </div>
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-          <input id="searchBox" placeholder="Search matcha, chai, pastry..." oninput="renderMenu()" style="width:205px;margin:0;padding:8px 12px" />
+          <input id="searchBox" placeholder="Search melody, matcha, chai..." oninput="renderMenu()" style="width:205px;margin:0;padding:8px 12px" />
           <label style="font-weight:600;font-size:0.88rem;cursor:pointer"><input type="checkbox" id="veganOnly" onchange="renderMenu()" style="width:auto;margin:0 6px 0 0" />Vegan Only</label>
         </div>
       </div>
@@ -293,7 +296,7 @@
     <section id="view-table" class="page-view">
       <div class="sec-head">
         <div>
-          <h2>Book a Table at Mocha Muse</h2>
+          <h2>Book a Table at Noir &amp; Bean</h2>
           <p>Reserve a quiet indoor study booth or sunlit garden table near UPES Bidholi.</p>
         </div>
       </div>
@@ -354,9 +357,9 @@
       <div class="two-col">
         <div class="panel">
           <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80" alt="Cafe Story" style="width:100%;height:215px;object-fit:cover;border-radius:14px;margin-bottom:14px" />
-          <h3 style="color:var(--forest);margin-bottom:8px">The Mocha Muse Story</h3>
-          <p class="meta" style="margin-bottom:8px">Founded in 2026 in Bidholi, Dehradun, Mocha Muse brings together small-batch Indian specialty coffee, botanical teas, and warm morning bakes in a calm sage-green space.</p>
-          <p class="meta">We partner directly with Chikmagalur estates for medium-dark Arabica roasts and serve every order in 100% plastic-free, compostable packaging.</p>
+          <h3 style="color:var(--forest);margin-bottom:8px">The Noir &amp; Bean Story</h3>
+          <p class="meta" style="margin-bottom:8px">Founded in 2026 in Bidholi, Dehradun, Noir &amp; Bean brings together small-batch Indian specialty coffee, botanical teas, and warm morning bakes in a calm sage-green space.</p>
+          <p class="meta">We partner directly with Chikmagalur estates for medium-dark Arabica roasts and serve every order GST-free in 100% plastic-free, compostable packaging.</p>
         </div>
         <div class="panel">
           <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80" alt="Location" style="width:100%;height:215px;object-fit:cover;border-radius:14px;margin-bottom:14px" />
@@ -376,8 +379,8 @@
     <section id="view-order" class="page-view">
       <div class="sec-head">
         <div>
-          <h2>Your Order Tray &amp; Checkout</h2>
-          <p>Apply code <b>MOCHA20</b> on orders ₹300+ and verify your payment to generate a pickup receipt.</p>
+          <h2>Your Order Tray &amp; Checkout (GST-Free)</h2>
+          <p>Apply code <b>NOIR20</b> on orders ₹300+ and verify your payment to generate a pickup receipt.</p>
         </div>
       </div>
       <div class="two-col">
@@ -386,7 +389,7 @@
             <h3 style="color:var(--forest);margin-bottom:8px">Selected Items</h3>
             <div id="cartContainer"></div>
             <div style="display:flex;gap:8px;margin-top:12px">
-              <input id="promoInput" placeholder="Promo code: MOCHA20" style="margin:0" />
+              <input id="promoInput" placeholder="Promo code: NOIR20" style="margin:0" />
               <button class="btn" type="button" onclick="applyPromo()">Apply</button>
             </div>
             <p id="promoMsg" style="font-size:0.84rem;margin-top:6px;font-weight:600"></p>
@@ -406,7 +409,7 @@
               <option>Express Counter Pickup (10–15 mins) — Bidholi</option>
               <option>Dine-In Table — Near UPES Campus Gate</option>
             </select>
-            <button type="submit" class="btn" style="width:100%;justify-content:center;margin-top:8px">Proceed to MusePay Checkout →</button>
+            <button type="submit" class="btn" style="width:100%;justify-content:center;margin-top:8px">Proceed to NoirPay Checkout →</button>
           </form>
         </div>
       </div>
@@ -439,13 +442,13 @@
     </section>
   </main>
 
-  <!-- REDESIGNED MUSEPAY GATEWAY MODAL -->
+  <!-- NOIRPAY GATEWAY MODAL -->
   <div class="modal" id="payModal">
     <div class="gw-box">
       <div class="gw-head">
         <div>
-          <b>MusePay Secure Checkout</b>
-          <small>Mocha Muse • Bidholi, Dehradun</small>
+          <b>NoirPay Secure Checkout</b>
+          <small>Noir &amp; Bean • Bidholi, Dehradun (GST-Free)</small>
         </div>
         <div style="display:flex;align-items:center;gap:10px">
           <span class="gw-amt-pill" id="modalPayAmt">₹0</span>
@@ -471,7 +474,7 @@
       <div class="gw-head" style="justify-content:center;text-align:center">
         <div>
           <b style="font-size:1.1rem">✅ Payment Verified</b>
-          <small>Mocha Muse • Main Bidholi Road, Near UPES, Dehradun</small>
+          <small>Noir &amp; Bean • Main Bidholi Road, Near UPES, Dehradun</small>
         </div>
       </div>
       <div class="gw-body">
@@ -485,7 +488,7 @@
   </div>
 
   <footer>
-    <b>Mocha Muse — Botanical Roastery &amp; Café</b><br />
+    <b>Noir &amp; Bean — Botanical Roastery &amp; Café</b><br />
     Main Bidholi Road, Near UPES Campus Gate, Dehradun, Uttarakhand 248007
   </footer>
 
@@ -493,6 +496,7 @@
     const UPI_ID = "7668441481@ptyes";
 
     const MENU = [
+      { id: 13, name: "Melody Chocolaty Toffee", cat: "Pastries & Bakery", price: 1, vegan: false, desc: "Classic caramel & rich chocolaty center toffee—sweet bite after any coffee or chai.", img: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80" },
       { id: 1, name: "Adrak Elaichi Kulhad Chai", cat: "Coffee & Botanicals", price: 50, vegan: false, desc: "Crushed fresh ginger, green cardamom & Assam tea simmered in farm milk.", img: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80" },
       { id: 2, name: "Chikmagalur Pour-Over Black", cat: "Coffee & Botanicals", price: 140, vegan: true, desc: "Single-estate medium roast brewed via V60 with citrus & jaggery notes.", img: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" },
       { id: 3, name: "Hazelnut Velvet Flat White", cat: "Coffee & Botanicals", price: 180, vegan: false, desc: "Double Arabica espresso shot with silky micro-foamed milk & roasted hazelnut.", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" },
@@ -508,11 +512,11 @@
     ];
 
     let cart = [];
-    let paymentLogs = JSON.parse(localStorage.getItem("mm_payment_logs") || "[]");
+    let paymentLogs = JSON.parse(localStorage.getItem("nb_payment_logs") || "[]");
     let activeCat = "All";
     let discountRate = 0;
     let payMode = "upi";
-    let subTotal = 0, discAmt = 0, gstAmt = 0, finalTotal = 0;
+    let subTotal = 0, discAmt = 0, finalTotal = 0;
 
     function switchPage(pageId) {
       document.querySelectorAll(".page-view").forEach(p => p.classList.remove("active"));
@@ -582,14 +586,14 @@
     function applyPromo() {
       const code = document.getElementById("promoInput").value.trim().toUpperCase();
       const msg = document.getElementById("promoMsg");
-      if (code === "MOCHA20" && subTotal >= 300) {
+      if (code === "NOIR20" && subTotal >= 300) {
         discountRate = 0.20;
         msg.style.color = "#166534";
-        msg.textContent = "MOCHA20 applied! 20% discount unlocked.";
+        msg.textContent = "NOIR20 applied! 20% discount unlocked.";
       } else {
         discountRate = 0;
         msg.style.color = "var(--danger)";
-        msg.textContent = "Code MOCHA20 requires an order subtotal of ₹300 or more.";
+        msg.textContent = "Code NOIR20 requires an order subtotal of ₹300 or more.";
       }
       renderCart();
     }
@@ -607,7 +611,7 @@
               <button type="button" onclick="changeQty(${item.id}, 1)" style="padding:3px 10px;border-radius:7px;border:1px solid var(--border);cursor:pointer">+</button>
             </div>
           </div>`;
-      }).join("") : "<p class='meta'>Your tray is empty. Explore the Menu tab to add drinks or bakes.</p>";
+      }).join("") : "<p class='meta'>Your tray is empty. Explore the Menu tab to add drinks, toffees, or bakes.</p>";
 
       subTotal = cart.reduce((sum, c) => sum + MENU.find(m => m.id === c.id).price * c.qty, 0);
       if (subTotal < 300 && discountRate > 0) {
@@ -615,13 +619,12 @@
         document.getElementById("promoMsg").textContent = "";
       }
       discAmt = Math.round(subTotal * discountRate);
-      gstAmt = Math.round((subTotal - discAmt) * 0.05);
-      finalTotal = subTotal - discAmt + gstAmt;
+      finalTotal = subTotal - discAmt;
 
       document.getElementById("billSummary").innerHTML = `
         <div>Item Subtotal: <b>₹${subTotal}</b></div>
         <div>Promo Discount: <b>-₹${discAmt}</b></div>
-        <div>GST (5%): <b>₹${gstAmt}</b></div>
+        <div>GST: <b>₹0 (GST-Free)</b></div>
         <div style="font-size:1.12rem;color:var(--forest);border-top:1px solid var(--border);margin-top:6px;padding-top:6px">Total Payable: <b>₹${finalTotal}</b></div>
       `;
     }
@@ -632,7 +635,7 @@
       const date = document.getElementById("bkDate").value;
       const guests = document.getElementById("bkGuests").value;
       const slot = document.getElementById("bkSlot").value;
-      const ref = "MM-TBL-" + Math.floor(1000 + Math.random() * 9000);
+      const ref = "NB-TBL-" + Math.floor(1000 + Math.random() * 9000);
       const banner = document.getElementById("bookingStatus");
       banner.style.display = "block";
       banner.textContent = `✅ Table Booked (${ref}) for ${name} (${guests}) on ${date} at ${slot}.`;
@@ -673,7 +676,7 @@
       document.querySelectorAll(".popt").forEach(el => el.classList.remove("active"));
       document.getElementById("opt-" + mode).classList.add("active");
       const body = document.getElementById("payModeBody");
-      const params = `pa=${UPI_ID}&pn=Mocha%20Muse&am=${finalTotal}&cu=INR&tn=CafeOrder`;
+      const params = `pa=${UPI_ID}&pn=Noir%20and%20Bean&am=${finalTotal}&cu=INR&tn=CafeOrder`;
       const genericUpi = `upi://pay?${params}`;
       const gpayUpi = `tez://upi/pay?${params}`;
       const phonepeUpi = `phonepe://pay?${params}`;
@@ -713,8 +716,8 @@
             <input id="cardCvv" placeholder="CVV *" maxlength="3" type="password" />
           </div>`;
       } else {
-        updateTracker("💵 Counter Mode: Pay ₹" + finalTotal + " at the Mocha Muse pickup counter.", "");
-        body.innerHTML = `<p style="background:var(--tint);padding:12px;border-radius:10px;font-size:0.9rem">Pay <b>₹${finalTotal}</b> via Cash or UPI at the Mocha Muse counter upon pickup.</p>`;
+        updateTracker("💵 Counter Mode: Pay ₹" + finalTotal + " at the Noir & Bean pickup counter.", "");
+        body.innerHTML = `<p style="background:var(--tint);padding:12px;border-radius:10px;font-size:0.9rem">Pay <b>₹${finalTotal}</b> via Cash or UPI at the Noir &amp; Bean counter upon pickup.</p>`;
       }
     }
 
@@ -753,7 +756,7 @@
         updateTracker("✅ Payment Verified! Generating digital receipt...", "ok");
         setTimeout(() => {
           closePaymentModal();
-          const orderId = "MM-" + Math.floor(1000 + Math.random() * 9000);
+          const orderId = "NB-" + Math.floor(1000 + Math.random() * 9000);
           const timeStr = new Date().toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" });
           const custName = document.getElementById("custName").value.trim();
           const custPhone = document.getElementById("custPhone").value.trim();
@@ -769,7 +772,7 @@
             amount: finalTotal,
             statusLabel
           });
-          localStorage.setItem("mm_payment_logs", JSON.stringify(paymentLogs));
+          localStorage.setItem("nb_payment_logs", JSON.stringify(paymentLogs));
           updateLogBadge();
 
           const itemsLines = cart.map(c => {
@@ -787,7 +790,7 @@
             <hr style="margin:8px 0;border:none;border-top:1px dashed #b9c7be" />
             <div class="rl"><span>Subtotal</span><span>₹${subTotal}</span></div>
             <div class="rl"><span>Discount</span><span>-₹${discAmt}</span></div>
-            <div class="rl"><span>GST (5%)</span><span>₹${gstAmt}</span></div>
+            <div class="rl"><span>GST</span><span>₹0 (GST-Free)</span></div>
             <div class="rl" style="font-weight:800;font-size:1.06rem;color:var(--forest);margin-top:4px">
               <span>Total ${payMode === "cash" ? "Due" : "Paid"}</span><span>₹${finalTotal}</span>
             </div>
@@ -827,7 +830,7 @@
     function clearLogs() {
       if (!confirm("Clear all saved payment logs from this browser?")) return;
       paymentLogs = [];
-      localStorage.removeItem("mm_payment_logs");
+      localStorage.removeItem("nb_payment_logs");
       renderLogs();
     }
 
