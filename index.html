@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mocha Muse | Botanical Roastery & Café • Bidholi, Dehradun</title>
+  <style>
+    :root {
+      --bg: #f6f7f2;
+      --surface: #ffffff;
+      --tint: #ebf0ea;
+      --forest: #1f3a2e;
+      --sage: #3b6e57;
+      --sage-hover: #2c5543;
+      --sand: #d8c3a5;
+      --ink: #1a241f;
+      --muted: #56665e;
+      --border: #dce4dc;
+      --danger: #b42318;
+      --shadow: 0 10px 28px rgba(31, 58, 46, 0.07);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    body { background: var(--bg); color: var(--ink); line-height: 1.6; }
+
+    /* CENTERED EDITORIAL HEADER */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 60;
+      padding: 14px 20px 12px;
+      box-shadow: 0 4px 16px rgba(31, 58, 46, 0.05);
+    }
+    .mast {
+      max-width: 1140px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px; cursor: pointer;
+      font-weight: 800; font-size: 1.32rem; color: var(--forest); letter-spacing: -0.02em;
+    }
+    .leaf-badge {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: var(--forest); color: #e8f3ec;
+      display: grid; place-items: center; font-size: 1rem;
+    }
+    nav { display: flex; gap: 6px; flex-wrap: wrap; background: var(--tint); padding: 5px; border-radius: 14px; }
+    .nav-btn {
+      background: transparent; color: var(--muted); border: none;
+      padding: 8px 14px; border-radius: 10px; font-weight: 700; font-size: 0.86rem;
+      cursor: pointer; transition: 0.2s;
+    }
+    .nav-btn:hover { color: var(--forest); }
+    .nav-btn.active { background: var(--forest); color: #fff; box-shadow: 0 3px 10px rgba(31, 58, 46, 0.2); }
+
+    main { max-width: 1140px; margin: 28px auto; padding: 0 18px 80px; }
+    .page-view { display: none; animation: softFade 0.3s ease; }
+    .page-view.active { display: block; }
+    @keyframes softFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    /* BOTANICAL ARCH HERO */
+    .muse-hero {
+      background: linear-gradient(135deg, #1f3a2e 0%, #2e5443 100%);
+      color: #f6f7f2; border-radius: 28px; padding: 38px 34px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center;
+      margin-bottom: 32px; box-shadow: var(--shadow);
+    }
+    @media (max-width: 820px) { .muse-hero { grid-template-columns: 1fr; padding: 28px 22px; } }
+    .eyebrow {
+      display: inline-block; background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25); color: #d8ece0;
+      padding: 4px 13px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 14px;
+    }
+    .muse-hero h1 { font-size: clamp(1.9rem, 3.8vw, 2.75rem); line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.02em; }
+    .muse-hero p { color: #dce7e0; font-size: 1rem; margin-bottom: 22px; max-width: 52ch; }
+    .arch-frame {
+      border-radius: 140px 140px 24px 24px; overflow: hidden; height: 310px;
+      border: 4px solid rgba(255, 255, 255, 0.18); box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+    }
+    .arch-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+    .btn {
+      background: var(--sage); color: #fff; border: none; padding: 11px 22px;
+      border-radius: 12px; font-weight: 700; font-size: 0.92rem; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 7px; transition: 0.15s;
+    }
+    .btn:hover { background: var(--sage-hover); }
+    .btn:active { transform: scale(0.97); }
+    .btn-cream { background: #f3ece1; color: var(--forest); }
+    .btn-cream:hover { background: #e7dccb; }
+    .btn-ghost { background: transparent; color: var(--forest); border: 1.5px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--forest); background: var(--tint); }
+
+    /* FEATURE RIBBON */
+    .ribbon {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px; margin-bottom: 32px;
+    }
+    .rib-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px;
+    }
+    .rib-icon {
+      width: 38px; height: 38px; border-radius: 10px; background: var(--tint);
+      color: var(--forest); display: grid; place-items: center; font-weight: 800; flex-shrink: 0;
+    }
+    .rib-item b { display: block; font-size: 0.96rem; color: var(--forest); }
+    .rib-item span { font-size: 0.82rem; color: var(--muted); }
+
+    .sec-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; margin: 26px 0 16px; }
+    .sec-head h2 { font-size: 1.55rem; color: var(--forest); letter-spacing: -0.02em; }
+    .sec-head p { color: var(--muted); font-size: 0.92rem; }
+
+    /* VERTICAL BOTANICAL CARDS */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .m-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+    .m-card:hover { transform: translateY(-3px); }
+    .m-card img { width: 100%; height: 185px; object-fit: cover; background: var(--tint); }
+    .mc-body { padding: 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: space-between; }
+    .tag { background: var(--tint); color: var(--forest); font-size: 0.73rem; padding: 3px 9px; border-radius: 999px; font-weight: 700; display: inline-block; }
+    .tag-veg { background: #dcfce7; color: #166534; }
+    .meta { font-size: 0.84rem; color: var(--muted); }
+    .price { font-weight: 800; font-size: 1.18rem; color: var(--forest); }
+    .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow); }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    @media (max-width: 780px) { .two-col { grid-template-columns: 1fr; } }
+
+    .filter-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .pills { display: flex; gap: 7px; flex-wrap: wrap; }
+    .pill { padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--bg); font-weight: 600; font-size: 0.84rem; cursor: pointer; color: var(--muted); }
+    .pill.active { background: var(--forest); color: #fff; border-color: var(--forest); }
+
+    input, select { width: 100%; padding: 10px 13px; border: 1.5px solid var(--border); border-radius: 11px; margin: 4px 0 11px; font-size: 0.93rem; background: #fbfcfa; color: var(--ink); }
+    input:focus, select:focus { outline: none; border-color: var(--sage); background: #fff; }
+    .bill-card { background: var(--tint); border: 1px solid var(--border); padding: 15px; border-radius: 14px; margin-top: 12px; font-size: 0.94rem; line-height: 1.8; }
+    .banner-ok { padding: 12px 14px; border-radius: 11px; margin-top: 12px; font-weight: 600; font-size: 0.88rem; background: #dcfce7; color: #166534; display: none; }
+
+    /* REDESIGNED MUSEPAY GATEWAY MODAL */
+    .modal { display: none; position: fixed; inset: 0; background: rgba(18, 32, 25, 0.76); backdrop-filter: blur(4px); z-index: 100; place-items: center; padding: 16px; overflow-y: auto; }
+    .modal.open { display: grid; }
+    .gw-box { background: var(--surface); border-radius: 22px; max-width: 470px; width: 100%; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,0.35); border: 1px solid var(--border); }
+    .gw-head { background: var(--forest); color: #fff; padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; }
+    .gw-head small { display: block; color: #b9d3c5; font-size: 0.78rem; }
+    .gw-amt-pill { background: rgba(255,255,255,0.14); padding: 6px 13px; border-radius: 10px; font-weight: 800; font-size: 1.1rem; color: #f3ece1; }
+    .gw-body { padding: 20px 22px 22px; }
+    .popts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+    .popt { border: 1.5px solid var(--border); border-radius: 11px; padding: 9px 6px; text-align: center; font-weight: 700; font-size: 0.83rem; cursor: pointer; background: var(--bg); color: var(--muted); }
+    .popt.active { border-color: var(--forest); background: var(--tint); color: var(--forest); }
+    .qr-split { display: grid; grid-template-columns: 125px 1fr; gap: 12px; align-items: center; background: #f8faf8; border: 1.5px dashed var(--sage); border-radius: 14px; padding: 12px; margin-bottom: 10px; }
+    @media (max-width: 430px) { .qr-split { grid-template-columns: 1fr; text-align: center; } }
+    .copy-chip { background: var(--forest); color: #fff; border: none; padding: 4px 10px; border-radius: 7px; font-size: 0.76rem; font-weight: 700; cursor: pointer; margin-top: 4px; }
+    .uapps { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+    .uapp { display: block; text-align: center; padding: 7px 5px; border-radius: 8px; background: #fff; border: 1px solid var(--border); color: var(--forest); text-decoration: none; font-weight: 700; font-size: 0.79rem; }
+    .uapp:hover { background: var(--tint); border-color: var(--sage); }
+    .tracker { font-size: 0.82rem; padding: 9px 12px; border-radius: 10px; margin-top: 8px; font-weight: 600; background: #fef9c3; color: #854d0e; border: 1px solid #fde047; }
+    .tracker.fail { background: #fee2e2; color: var(--danger); border-color: #fca5a5; }
+    .tracker.ok { background: #dcfce7; color: #166534; border-color: #86efac; }
+
+    .receipt-box { background: #fafbf9; border: 1.5px dashed #9eb2a6; border-radius: 12px; padding: 15px; margin-top: 12px; font-size: 0.88rem; }
+    .rl { display: flex; justify-content: space-between; padding: 4px 0; gap: 8px; }
+
+    .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 680px; }
+    th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #e6ede6; }
+    th { background: var(--tint); color: var(--forest); font-weight: 700; }
+
+    footer { background: var(--forest); color: #dce7e0; text-align: center; padding: 28px 16px; font-size: 0.9rem; line-height: 1.75; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="mast">
+      <div class="brand" onclick="switchPage('home')">
+        <div class="leaf-badge">🌿</div>
+        <span>Mocha Muse</span>
+      </div>
+      <nav>
+        <button id="nav-home" class="nav-btn active" onclick="switchPage('home')">Home</button>
+        <button id="nav-menu" class="nav-btn" onclick="switchPage('menu')">Menu</button>
+        <button id="nav-table" class="nav-btn" onclick="switchPage('table')">Book Table</button>
+        <button id="nav-about" class="nav-btn" onclick="switchPage('about')">Story &amp; Visit</button>
+        <button id="nav-order" class="nav-btn" onclick="switchPage('order')">Tray (<span id="trayCount">0</span>)</button>
+        <button id="nav-logs" class="nav-btn" onclick="switchPage('logs')">Payment Log (<span id="logCount">0</span>)</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE 1: HOME -->
+    <section id="view-home" class="page-view active">
+      <div class="muse-hero">
+        <div>
+          <span class="eyebrow">Main Bidholi Road, Near UPES Campus • Dehradun</span>
+          <h1>Botanical Roasts, Matcha &amp; Artisanal Plates</h1>
+          <p>A serene sage-green coffee sanctuary right next to UPES Bidholi. Sip freshly brewed kulhad chai starting at ₹50, single-estate espresso, and warm sourdough bakes.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn btn-cream" onclick="switchPage('menu')">Explore Full Menu →</button>
+            <button class="btn" style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.3)" onclick="switchPage('table')">🪑 Book a Table</button>
+          </div>
+        </div>
+        <div class="arch-frame">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Mocha Muse Botanical Cafe" />
+        </div>
+      </div>
+
+      <div class="ribbon">
+        <div class="rib-item"><div class="rib-icon">₹50</div><div><b>Student Value Menu</b><span>Fresh ginger-cardamom chai &amp; warm buns</span></div></div>
+        <div class="rib-item"><div class="rib-icon">🌱</div><div><b>100% Eco-Compostable</b><span>Plastic-free takeaway cups &amp; kraft boxes</span></div></div>
+        <div class="rib-item"><div class="rib-icon">⚡</div><div><b>300 Mbps Study Pods</b><span>Quiet booths with charging near UPES</span></div></div>
+        <div class="rib-item"><div class="rib-icon">20%</div><div><b>Code: MOCHA20</b><span>Instant discount on orders ₹300 &amp; above</span></div></div>
+      </div>
+
+      <div class="sec-head">
+        <div>
+          <h2>Signature Creations at Mocha Muse</h2>
+          <p>Tap any item below to add it straight to your order tray.</p>
+        </div>
+        <button class="btn btn-ghost" onclick="switchPage('menu')">View All 12 Items</button>
+      </div>
+
+      <div class="grid">
+        <div class="m-card">
+          <img src="https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80" alt="Adrak Elaichi Kulhad Chai" />
+          <div class="mc-body">
+            <div><span class="tag">Student Favorite • ₹50</span><h3 style="margin-top:7px">Adrak Elaichi Kulhad Chai</h3><p class="meta">Freshly crushed ginger, green cardamom &amp; Assam orthodox tea simmered in farm milk.</p></div>
+            <div class="row" style="margin-top:8px"><span class="price">₹50</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(1)">Order • ₹50</button></div>
+          </div>
+        </div>
+
+        <div class="m-card">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="Belgian Chocolate Truffle Pastry" />
+          <div class="mc-body">
+            <div><span class="tag">Fresh Pastry • 1 Slice</span><h3 style="margin-top:7px">Belgian Chocolate Pastry</h3><p class="meta">Rich 70% dark cocoa sponge layered with silky chocolate ganache &amp; hazelnut crunch.</p></div>
+            <div class="row" style="margin-top:8px"><span class="price">₹135</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(6)">Order • ₹135</button></div>
+          </div>
+        </div>
+
+        <div class="m-card">
+          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" alt="Smoked Paneer Pesto Sourdough" />
+          <div class="mc-body">
+            <div><span class="tag">Artisanal Plate • 2 Slices</span><h3 style="margin-top:7px">Smoked Paneer Pesto Sourdough</h3><p class="meta">Chargrilled cottage cheese, fresh basil pesto &amp; roasted tomatoes on 24-hr sourdough.</p></div>
+            <div class="row" style="margin-top:8px"><span class="price">₹240</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(11)">Order • ₹240</button></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel two-col" style="margin-top:32px;align-items:center">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Mocha Muse Roastery" style="width:100%;height:255px;object-fit:cover;border-radius:16px" />
+        <div>
+          <span class="tag" style="margin-bottom:8px">Our Café Story</span>
+          <h2 style="font-size:1.5rem;color:var(--forest);margin-bottom:10px">Where Botanical Calm Meets Single-Estate Coffee</h2>
+          <p class="meta" style="font-size:0.92rem;margin-bottom:10px">Mocha Muse was designed as a peaceful green retreat beside UPES Bidholi—a place where students can unwind over small-batch Chikmagalur roasts, ceremonial matcha, and warm pastries.</p>
+          <p class="meta" style="font-size:0.92rem;margin-bottom:16px">Every cup is brewed fresh to order and served in 100% plastic-free, biodegradable packaging.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn" onclick="switchPage('about')">Read Full Story</button>
+            <button class="btn btn-ghost" onclick="switchPage('table')">Reserve Study Table</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: MENU -->
+    <section id="view-menu" class="page-view">
+      <div class="sec-head">
+        <div>
+          <h2>Explore Full Menu (Prices in ₹)</h2>
+          <p>Apply promo code <b>MOCHA20</b> in your tray on orders ₹300+ for 20% off.</p>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="pills">
+          <button class="pill active" onclick="filterCat('All', this)">All (12)</button>
+          <button class="pill" onclick="filterCat('Coffee & Botanicals', this)">Coffee &amp; Botanicals</button>
+          <button class="pill" onclick="filterCat('Pastries & Bakery', this)">Pastries &amp; Bakery</button>
+          <button class="pill" onclick="filterCat('Sourdough Plates', this)">Sourdough Plates</button>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <input id="searchBox" placeholder="Search matcha, chai, pastry..." oninput="renderMenu()" style="width:205px;margin:0;padding:8px 12px" />
+          <label style="font-weight:600;font-size:0.88rem;cursor:pointer"><input type="checkbox" id="veganOnly" onchange="renderMenu()" style="width:auto;margin:0 6px 0 0" />Vegan Only</label>
+        </div>
+      </div>
+
+      <div class="grid" id="menuGrid"></div>
+    </section>
+
+    <!-- PAGE 3: BOOK A TABLE -->
+    <section id="view-table" class="page-view">
+      <div class="sec-head">
+        <div>
+          <h2>Book a Table at Mocha Muse</h2>
+          <p>Reserve a quiet indoor study booth or sunlit garden table near UPES Bidholi.</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=80" alt="Cafe Seating" style="width:100%;height:215px;object-fit:cover;border-radius:14px;margin-bottom:14px" />
+          <h3 style="color:var(--forest);margin-bottom:8px">Seating Zones &amp; Café Details</h3>
+          <p class="meta" style="margin-bottom:6px"><b>• Botanical Study Lounge:</b> Individual charging sockets + 300 Mbps fiber Wi-Fi.</p>
+          <p class="meta" style="margin-bottom:6px"><b>• Courtyard Herb Patio:</b> Fresh Dehradun mountain air, ideal for evening hangouts.</p>
+          <p class="meta" style="margin-bottom:6px"><b>• Address:</b> Main Bidholi Road, Near UPES Campus Gate, Dehradun, Uttarakhand 248007</p>
+          <p class="meta"><b>• Hours:</b> 7:30 AM – 10:30 PM (All Days)</p>
+        </div>
+
+        <div class="panel">
+          <form onsubmit="confirmBooking(event)">
+            <h3 style="color:var(--forest);margin-bottom:10px">Instant Table Reservation</h3>
+            <label style="font-weight:600;font-size:0.88rem">Full Name *</label>
+            <input id="bkName" required placeholder="Enter your name" />
+            <label style="font-weight:600;font-size:0.88rem">Mobile Number (10 digits) *</label>
+            <input id="bkPhone" pattern="[0-9]{10}" required placeholder="e.g. 9876543210" />
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div>
+                <label style="font-weight:600;font-size:0.88rem">Date *</label>
+                <input id="bkDate" type="date" required />
+              </div>
+              <div>
+                <label style="font-weight:600;font-size:0.88rem">Guests *</label>
+                <select id="bkGuests">
+                  <option>2 Guests</option>
+                  <option>4 Guests</option>
+                  <option>6 Guests (Group)</option>
+                  <option>1 Person (Solo Study)</option>
+                </select>
+              </div>
+            </div>
+            <label style="font-weight:600;font-size:0.88rem">Time Slot &amp; Zone</label>
+            <select id="bkSlot">
+              <option>11:00 AM — Botanical Study Lounge</option>
+              <option>02:00 PM — Window Espresso Bar</option>
+              <option>05:30 PM — Courtyard Herb Patio</option>
+              <option>08:00 PM — Evening Coffee Booth</option>
+            </select>
+            <button type="submit" class="btn" style="width:100%;justify-content:center;margin-top:6px">Confirm Table Reservation →</button>
+            <div id="bookingStatus" class="banner-ok"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: STORY & VISIT -->
+    <section id="view-about" class="page-view">
+      <div class="sec-head">
+        <div>
+          <h2>Our Story &amp; Bidholi Location</h2>
+          <p>Botanical coffee craft and fresh baking in the foothills of Dehradun.</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="panel">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80" alt="Cafe Story" style="width:100%;height:215px;object-fit:cover;border-radius:14px;margin-bottom:14px" />
+          <h3 style="color:var(--forest);margin-bottom:8px">The Mocha Muse Story</h3>
+          <p class="meta" style="margin-bottom:8px">Founded in 2026 in Bidholi, Dehradun, Mocha Muse brings together small-batch Indian specialty coffee, botanical teas, and warm morning bakes in a calm sage-green space.</p>
+          <p class="meta">We partner directly with Chikmagalur estates for medium-dark Arabica roasts and serve every order in 100% plastic-free, compostable packaging.</p>
+        </div>
+        <div class="panel">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80" alt="Location" style="width:100%;height:215px;object-fit:cover;border-radius:14px;margin-bottom:14px" />
+          <h3 style="color:var(--forest);margin-bottom:8px">Visit Us in Dehradun</h3>
+          <p class="meta" style="margin-bottom:6px"><b>Address:</b> Main Bidholi Road, Near UPES Campus Gate, Bidholi, Dehradun, Uttarakhand 248007</p>
+          <p class="meta" style="margin-bottom:6px"><b>Hours:</b> Monday – Sunday, 7:30 AM to 10:30 PM</p>
+          <p class="meta" style="margin-bottom:14px"><b>Contact &amp; UPI:</b> +91 98370 41210 • <code>7668441481@ptyes</code></p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn" onclick="switchPage('menu')">Order Pickup →</button>
+            <button class="btn btn-ghost" onclick="switchPage('table')">Book a Table</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: TRAY & CHECKOUT -->
+    <section id="view-order" class="page-view">
+      <div class="sec-head">
+        <div>
+          <h2>Your Order Tray &amp; Checkout</h2>
+          <p>Apply code <b>MOCHA20</b> on orders ₹300+ and verify your payment to generate a pickup receipt.</p>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="panel" style="display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <h3 style="color:var(--forest);margin-bottom:8px">Selected Items</h3>
+            <div id="cartContainer"></div>
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <input id="promoInput" placeholder="Promo code: MOCHA20" style="margin:0" />
+              <button class="btn" type="button" onclick="applyPromo()">Apply</button>
+            </div>
+            <p id="promoMsg" style="font-size:0.84rem;margin-top:6px;font-weight:600"></p>
+          </div>
+          <div class="bill-card" id="billSummary"></div>
+        </div>
+
+        <div class="panel">
+          <form onsubmit="openPaymentModal(event)">
+            <h3 style="color:var(--forest);margin-bottom:10px">Pickup &amp; Customer Details</h3>
+            <label style="font-weight:600;font-size:0.88rem">Full Name *</label>
+            <input id="custName" required placeholder="Enter your full name" />
+            <label style="font-weight:600;font-size:0.88rem">Mobile Number (10 digits) *</label>
+            <input id="custPhone" pattern="[0-9]{10}" required placeholder="e.g. 9876543210" />
+            <label style="font-weight:600;font-size:0.88rem">Order Mode</label>
+            <select id="custSlot">
+              <option>Express Counter Pickup (10–15 mins) — Bidholi</option>
+              <option>Dine-In Table — Near UPES Campus Gate</option>
+            </select>
+            <button type="submit" class="btn" style="width:100%;justify-content:center;margin-top:8px">Proceed to MusePay Checkout →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6: PAYMENT LOG -->
+    <section id="view-logs" class="page-view">
+      <div class="sec-head">
+        <div>
+          <h2>Counter Payment &amp; UTR Log</h2>
+          <p>Live record of verified orders, payment apps, and 12-digit UTR references.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" onclick="clearLogs()">Clear History</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID &amp; Time</th>
+              <th>Customer &amp; Phone</th>
+              <th>Payment Mode / App</th>
+              <th>UTR / Ref No.</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="logsTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- REDESIGNED MUSEPAY GATEWAY MODAL -->
+  <div class="modal" id="payModal">
+    <div class="gw-box">
+      <div class="gw-head">
+        <div>
+          <b>MusePay Secure Checkout</b>
+          <small>Mocha Muse • Bidholi, Dehradun</small>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="gw-amt-pill" id="modalPayAmt">₹0</span>
+          <button type="button" onclick="closePaymentModal()" style="border:none;background:none;color:#fff;font-size:1.3rem;cursor:pointer">✕</button>
+        </div>
+      </div>
+      <div class="gw-body">
+        <div class="popts">
+          <div class="popt active" id="opt-upi" onclick="selectPayMode('upi')">📱 UPI / QR</div>
+          <div class="popt" id="opt-card" onclick="selectPayMode('card')">💳 Card</div>
+          <div class="popt" id="opt-cash" onclick="selectPayMode('cash')">💵 Counter</div>
+        </div>
+        <div id="payModeBody"></div>
+        <div id="trackerBox" class="tracker">⏳ Tracker: Waiting for payment &amp; 12-digit UTR...</div>
+        <button id="verifyPayBtn" type="button" class="btn" style="width:100%;justify-content:center;margin-top:12px" onclick="verifyPayment()">Verify Payment &amp; Issue Receipt</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIGITAL RECEIPT MODAL -->
+  <div class="modal" id="receiptModal">
+    <div class="gw-box">
+      <div class="gw-head" style="justify-content:center;text-align:center">
+        <div>
+          <b style="font-size:1.1rem">✅ Payment Verified</b>
+          <small>Mocha Muse • Main Bidholi Road, Near UPES, Dehradun</small>
+        </div>
+      </div>
+      <div class="gw-body">
+        <div class="receipt-box" id="receiptBody"></div>
+        <div style="display:flex;gap:8px;margin-top:14px">
+          <button type="button" class="btn" style="flex:1;justify-content:center" onclick="window.print()">🖨️ Print Receipt</button>
+          <button type="button" class="btn btn-ghost" style="flex:1;justify-content:center" onclick="closeReceiptModal()">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <b>Mocha Muse — Botanical Roastery &amp; Café</b><br />
+    Main Bidholi Road, Near UPES Campus Gate, Dehradun, Uttarakhand 248007
+  </footer>
+
+  <script>
+    const UPI_ID = "7668441481@ptyes";
+
+    const MENU = [
+      { id: 1, name: "Adrak Elaichi Kulhad Chai", cat: "Coffee & Botanicals", price: 50, vegan: false, desc: "Crushed fresh ginger, green cardamom & Assam tea simmered in farm milk.", img: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80" },
+      { id: 2, name: "Chikmagalur Pour-Over Black", cat: "Coffee & Botanicals", price: 140, vegan: true, desc: "Single-estate medium roast brewed via V60 with citrus & jaggery notes.", img: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" },
+      { id: 3, name: "Hazelnut Velvet Flat White", cat: "Coffee & Botanicals", price: 180, vegan: false, desc: "Double Arabica espresso shot with silky micro-foamed milk & roasted hazelnut.", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" },
+      { id: 4, name: "Iced Ceremonial Matcha Latte", cat: "Coffee & Botanicals", price: 195, vegan: true, desc: "Whisked shade-grown green tea layered over chilled oat milk & organic honey.", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=600&q=80" },
+      { id: 5, name: "Warm Garlic Herb Bun", cat: "Pastries & Bakery", price: 65, vegan: false, desc: "Oven-warm soft brioche bun brushed with roasted garlic & herb butter.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" },
+      { id: 6, name: "Belgian Chocolate Pastry", cat: "Pastries & Bakery", price: 135, vegan: false, desc: "Rich 70% dark cocoa sponge layered with silky ganache & hazelnut crunch.", img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" },
+      { id: 7, name: "Red Velvet Cream Pastry", cat: "Pastries & Bakery", price: 145, vegan: false, desc: "Crimson cocoa velvet sponge frosted with Madagascar vanilla cream cheese.", img: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=600&q=80" },
+      { id: 8, name: "Blueberry Cheesecake Slice", cat: "Pastries & Bakery", price: 165, vegan: false, desc: "Creamy baked cheesecake on a buttery biscuit crust with blueberry compote.", img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80" },
+      { id: 9, name: "Almond Butter Croissant", cat: "Pastries & Bakery", price: 175, vegan: false, desc: "Twice-baked flaky butter croissant filled with roasted almond frangipane.", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" },
+      { id: 10, name: "Cinnamon Churros & Dip", cat: "Pastries & Bakery", price: 120, vegan: true, desc: "Crisp golden pastry sticks dusted with cinnamon sugar & dark chocolate dip.", img: "https://images.unsplash.com/photo-1624371414361-e670edf4898d?auto=format&fit=crop&w=600&q=80" },
+      { id: 11, name: "Smoked Paneer Pesto Sourdough", cat: "Sourdough Plates", price: 240, vegan: false, desc: "Chargrilled cottage cheese, fresh basil pesto & tomatoes on sourdough.", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" },
+      { id: 12, name: "Truffle Mushroom Tartine", cat: "Sourdough Plates", price: 230, vegan: true, desc: "Garlic-roasted wild mushrooms over whipped chickpea tahini on sourdough.", img: "https://images.unsplash.com/photo-1525351484163-7529414342d8?auto=format&fit=crop&w=600&q=80" }
+    ];
+
+    let cart = [];
+    let paymentLogs = JSON.parse(localStorage.getItem("mm_payment_logs") || "[]");
+    let activeCat = "All";
+    let discountRate = 0;
+    let payMode = "upi";
+    let subTotal = 0, discAmt = 0, gstAmt = 0, finalTotal = 0;
+
+    function switchPage(pageId) {
+      document.querySelectorAll(".page-view").forEach(p => p.classList.remove("active"));
+      document.getElementById("view-" + pageId).classList.add("active");
+      document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
+      document.getElementById("nav-" + pageId).classList.add("active");
+      if (pageId === "logs") renderLogs();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function filterCat(cat, btn) {
+      activeCat = cat;
+      document.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      renderMenu();
+    }
+
+    function renderMenu() {
+      const veganOnly = document.getElementById("veganOnly").checked;
+      const query = document.getElementById("searchBox").value.trim().toLowerCase();
+      const filtered = MENU.filter(item =>
+        (activeCat === "All" || item.cat === activeCat) &&
+        (!veganOnly || item.vegan) &&
+        (item.name.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query))
+      );
+      document.getElementById("menuGrid").innerHTML = filtered.length ? filtered.map(item => `
+        <div class="m-card">
+          <img src="${item.img}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80'" />
+          <div class="mc-body">
+            <div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap">
+                <span class="tag">${item.cat}</span>
+                ${item.vegan ? '<span class="tag tag-veg">Vegan</span>' : ''}
+              </div>
+              <h3 style="margin-top:7px">${item.name}</h3>
+              <p class="meta" style="margin-top:4px">${item.desc}</p>
+            </div>
+            <div class="row" style="margin-top:10px">
+              <span class="price">₹${item.price}</span>
+              <button type="button" class="btn" style="padding:8px 15px" onclick="addToCart(${item.id})">+ Add</button>
+            </div>
+          </div>
+        </div>
+      `).join("") : "<p class='meta'>No items match your search filter.</p>";
+    }
+
+    function addToCart(id) {
+      const found = cart.find(c => c.id === id);
+      if (found) found.qty += 1;
+      else cart.push({ id, qty: 1 });
+      renderCart();
+    }
+
+    function quickOrder(id) {
+      addToCart(id);
+      switchPage("order");
+    }
+
+    function changeQty(id, delta) {
+      const idx = cart.findIndex(c => c.id === id);
+      if (idx === -1) return;
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) cart.splice(idx, 1);
+      renderCart();
+    }
+
+    function applyPromo() {
+      const code = document.getElementById("promoInput").value.trim().toUpperCase();
+      const msg = document.getElementById("promoMsg");
+      if (code === "MOCHA20" && subTotal >= 300) {
+        discountRate = 0.20;
+        msg.style.color = "#166534";
+        msg.textContent = "MOCHA20 applied! 20% discount unlocked.";
+      } else {
+        discountRate = 0;
+        msg.style.color = "var(--danger)";
+        msg.textContent = "Code MOCHA20 requires an order subtotal of ₹300 or more.";
+      }
+      renderCart();
+    }
+
+    function renderCart() {
+      document.getElementById("trayCount").textContent = cart.reduce((sum, c) => sum + c.qty, 0);
+      document.getElementById("cartContainer").innerHTML = cart.length ? cart.map(c => {
+        const item = MENU.find(m => m.id === c.id);
+        return `
+          <div class="row" style="border-bottom:1px solid var(--border);padding:8px 0">
+            <span><b>${item.name}</b><br><small class="meta">₹${item.price} × ${c.qty}</small></span>
+            <div>
+              <button type="button" onclick="changeQty(${item.id}, -1)" style="padding:3px 10px;border-radius:7px;border:1px solid var(--border);cursor:pointer">-</button>
+              <b style="margin:0 7px">${c.qty}</b>
+              <button type="button" onclick="changeQty(${item.id}, 1)" style="padding:3px 10px;border-radius:7px;border:1px solid var(--border);cursor:pointer">+</button>
+            </div>
+          </div>`;
+      }).join("") : "<p class='meta'>Your tray is empty. Explore the Menu tab to add drinks or bakes.</p>";
+
+      subTotal = cart.reduce((sum, c) => sum + MENU.find(m => m.id === c.id).price * c.qty, 0);
+      if (subTotal < 300 && discountRate > 0) {
+        discountRate = 0;
+        document.getElementById("promoMsg").textContent = "";
+      }
+      discAmt = Math.round(subTotal * discountRate);
+      gstAmt = Math.round((subTotal - discAmt) * 0.05);
+      finalTotal = subTotal - discAmt + gstAmt;
+
+      document.getElementById("billSummary").innerHTML = `
+        <div>Item Subtotal: <b>₹${subTotal}</b></div>
+        <div>Promo Discount: <b>-₹${discAmt}</b></div>
+        <div>GST (5%): <b>₹${gstAmt}</b></div>
+        <div style="font-size:1.12rem;color:var(--forest);border-top:1px solid var(--border);margin-top:6px;padding-top:6px">Total Payable: <b>₹${finalTotal}</b></div>
+      `;
+    }
+
+    function confirmBooking(e) {
+      e.preventDefault();
+      const name = document.getElementById("bkName").value.trim();
+      const date = document.getElementById("bkDate").value;
+      const guests = document.getElementById("bkGuests").value;
+      const slot = document.getElementById("bkSlot").value;
+      const ref = "MM-TBL-" + Math.floor(1000 + Math.random() * 9000);
+      const banner = document.getElementById("bookingStatus");
+      banner.style.display = "block";
+      banner.textContent = `✅ Table Booked (${ref}) for ${name} (${guests}) on ${date} at ${slot}.`;
+    }
+
+    function updateTracker(text, status) {
+      const box = document.getElementById("trackerBox");
+      box.className = "tracker" + (status ? " " + status : "");
+      box.textContent = text;
+    }
+
+    function copyUpiId() {
+      navigator.clipboard?.writeText(UPI_ID);
+      updateTracker("📋 Copied " + UPI_ID + "! Pay ₹" + finalTotal + " in any UPI app & enter 12-digit UTR below.", "");
+    }
+
+    function launchUpi(appName, scheme) {
+      const sel = document.getElementById("payerApp");
+      if (sel) sel.value = appName;
+      updateTracker("📱 Opening " + appName + "... (If on Laptop, scan the QR code with your phone)", "");
+      window.location.href = scheme;
+    }
+
+    function openPaymentModal(e) {
+      e.preventDefault();
+      if (!cart.length) return alert("Your tray is empty! Add at least one item first.");
+      document.getElementById("modalPayAmt").textContent = "₹" + finalTotal;
+      selectPayMode("upi");
+      document.getElementById("payModal").classList.add("open");
+    }
+
+    function closePaymentModal() {
+      document.getElementById("payModal").classList.remove("open");
+    }
+
+    function selectPayMode(mode) {
+      payMode = mode;
+      document.querySelectorAll(".popt").forEach(el => el.classList.remove("active"));
+      document.getElementById("opt-" + mode).classList.add("active");
+      const body = document.getElementById("payModeBody");
+      const params = `pa=${UPI_ID}&pn=Mocha%20Muse&am=${finalTotal}&cu=INR&tn=CafeOrder`;
+      const genericUpi = `upi://pay?${params}`;
+      const gpayUpi = `tez://upi/pay?${params}`;
+      const phonepeUpi = `phonepe://pay?${params}`;
+      const paytmUpi = `paytmmp://pay?${params}`;
+
+      if (mode === "upi") {
+        updateTracker("⏳ Tracker: Scan QR or pay via UPI app, then enter 12-digit UTR to verify.", "");
+        body.innerHTML = `
+          <div class="qr-split">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(genericUpi)}" alt="UPI QR ${UPI_ID}" style="width:120px;height:120px;border-radius:10px;margin:auto;display:block" />
+            <div>
+              <div style="font-size:0.8rem;color:var(--muted)">Scan or Pay To:</div>
+              <div style="font-weight:800;font-size:0.86rem;color:var(--forest);word-break:break-all">${UPI_ID}</div>
+              <button type="button" class="copy-chip" onclick="copyUpiId()">Copy UPI ID</button>
+              <div class="uapps">
+                <a class="uapp" href="${gpayUpi}" onclick="launchUpi('Google Pay','${gpayUpi}');return false;">GPay</a>
+                <a class="uapp" href="${phonepeUpi}" onclick="launchUpi('PhonePe','${phonepeUpi}');return false;">PhonePe</a>
+                <a class="uapp" href="${paytmUpi}" onclick="launchUpi('Paytm','${paytmUpi}');return false;">Paytm</a>
+                <a class="uapp" href="${genericUpi}" onclick="launchUpi('Other UPI','${genericUpi}');return false;">Other App</a>
+              </div>
+            </div>
+          </div>
+          <select id="payerApp">
+            <option value="Google Pay">App Used: Google Pay (GPay)</option>
+            <option value="PhonePe">App Used: PhonePe</option>
+            <option value="Paytm">App Used: Paytm</option>
+            <option value="Other UPI App">App Used: Other UPI App</option>
+          </select>
+          <input id="utrInput" maxlength="12" placeholder="Enter 12-Digit UPI UTR / Ref No. *" style="margin-bottom:0" />`;
+      } else if (mode === "card") {
+        updateTracker("⏳ Tracker: Enter Cardholder Name, 16-digit Card Number, Expiry & CVV.", "");
+        body.innerHTML = `
+          <input id="cardHolder" placeholder="Cardholder Full Name *" />
+          <input id="cardNum" placeholder="16-Digit Card Number *" maxlength="16" />
+          <div style="display:flex;gap:8px">
+            <input id="cardExp" placeholder="MM/YY *" maxlength="5" />
+            <input id="cardCvv" placeholder="CVV *" maxlength="3" type="password" />
+          </div>`;
+      } else {
+        updateTracker("💵 Counter Mode: Pay ₹" + finalTotal + " at the Mocha Muse pickup counter.", "");
+        body.innerHTML = `<p style="background:var(--tint);padding:12px;border-radius:10px;font-size:0.9rem">Pay <b>₹${finalTotal}</b> via Cash or UPI at the Mocha Muse counter upon pickup.</p>`;
+      }
+    }
+
+    function verifyPayment() {
+      const btn = document.getElementById("verifyPayBtn");
+      btn.textContent = "Verifying with Bank Server...";
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.textContent = "Verify Payment & Issue Receipt";
+        btn.disabled = false;
+        let refId = "", appUsed = "";
+
+        if (payMode === "upi") {
+          const utr = (document.getElementById("utrInput")?.value || "").trim();
+          appUsed = document.getElementById("payerApp")?.value || "UPI App";
+          if (!/^[0-9]{12}$/.test(utr)) {
+            return updateTracker("❌ PAYMENT FAILED: Invalid or missing 12-digit UPI UTR for " + UPI_ID + "!", "fail");
+          }
+          refId = "UTR" + utr;
+        } else if (payMode === "card") {
+          const holder = (document.getElementById("cardHolder")?.value || "").trim();
+          const num = (document.getElementById("cardNum")?.value || "").trim();
+          const exp = (document.getElementById("cardExp")?.value || "").trim();
+          const cvv = (document.getElementById("cardCvv")?.value || "").trim();
+          if (holder.length < 2 || !/^[0-9]{16}$/.test(num) || !/^(0[1-9]|1[0-2])\/[0-9]{2}$/.test(exp) || !/^[0-9]{3}$/.test(cvv)) {
+            return updateTracker("❌ PAYMENT FAILED: Invalid cardholder details or card declined!", "fail");
+          }
+          refId = "CARD" + Date.now().toString().slice(-6);
+          appUsed = `Card (•••• ${num.slice(-4)})`;
+        } else {
+          refId = "COUNTER-DUE";
+          appUsed = "Cash at Counter";
+        }
+
+        updateTracker("✅ Payment Verified! Generating digital receipt...", "ok");
+        setTimeout(() => {
+          closePaymentModal();
+          const orderId = "MM-" + Math.floor(1000 + Math.random() * 9000);
+          const timeStr = new Date().toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" });
+          const custName = document.getElementById("custName").value.trim();
+          const custPhone = document.getElementById("custPhone").value.trim();
+          const statusLabel = payMode === "cash" ? "PAY AT COUNTER" : "PAID (VERIFIED)";
+
+          paymentLogs.unshift({
+            orderId,
+            timeStr,
+            custName,
+            custPhone,
+            appUsed,
+            refId,
+            amount: finalTotal,
+            statusLabel
+          });
+          localStorage.setItem("mm_payment_logs", JSON.stringify(paymentLogs));
+          updateLogBadge();
+
+          const itemsLines = cart.map(c => {
+            const m = MENU.find(x => x.id === c.id);
+            return `<div class="rl"><span>${m.name} × ${c.qty}</span><span>₹${m.price * c.qty}</span></div>`;
+          }).join("");
+
+          document.getElementById("receiptBody").innerHTML = `
+            <div class="rl"><span><b>Order ID:</b> ${orderId}</span><span><b>Ref:</b> ${refId}</span></div>
+            <div class="rl"><span><b>Customer:</b> ${custName} (${custPhone})</span><span>${timeStr}</span></div>
+            <div class="rl"><span><b>Mode:</b> ${appUsed}</span><span><b>To:</b> ${UPI_ID}</span></div>
+            <div class="rl"><span><b>Status:</b> ${statusLabel}</span><span>${document.getElementById("custSlot").value}</span></div>
+            <hr style="margin:8px 0;border:none;border-top:1px dashed #b9c7be" />
+            ${itemsLines}
+            <hr style="margin:8px 0;border:none;border-top:1px dashed #b9c7be" />
+            <div class="rl"><span>Subtotal</span><span>₹${subTotal}</span></div>
+            <div class="rl"><span>Discount</span><span>-₹${discAmt}</span></div>
+            <div class="rl"><span>GST (5%)</span><span>₹${gstAmt}</span></div>
+            <div class="rl" style="font-weight:800;font-size:1.06rem;color:var(--forest);margin-top:4px">
+              <span>Total ${payMode === "cash" ? "Due" : "Paid"}</span><span>₹${finalTotal}</span>
+            </div>
+          `;
+          document.getElementById("receiptModal").classList.add("open");
+        }, 450);
+      }, 800);
+    }
+
+    function closeReceiptModal() {
+      document.getElementById("receiptModal").classList.remove("open");
+    }
+
+    function updateLogBadge() {
+      document.getElementById("logCount").textContent = paymentLogs.length;
+    }
+
+    function renderLogs() {
+      updateLogBadge();
+      const tbody = document.getElementById("logsTableBody");
+      if (!paymentLogs.length) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:20px">No transactions recorded yet. Complete a checkout to see payment logs here.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = paymentLogs.map(log => `
+        <tr>
+          <td><b>${log.orderId}</b><br><small class="meta">${log.timeStr}</small></td>
+          <td><b>${log.custName}</b><br><small class="meta">${log.custPhone}</small></td>
+          <td>${log.appUsed}</td>
+          <td><b>${log.refId}</b></td>
+          <td><b>₹${log.amount}</b></td>
+          <td><span class="tag tag-veg">${log.statusLabel}</span></td>
+        </tr>
+      `).join("");
+    }
+
+    function clearLogs() {
+      if (!confirm("Clear all saved payment logs from this browser?")) return;
+      paymentLogs = [];
+      localStorage.removeItem("mm_payment_logs");
+      renderLogs();
+    }
+
+    renderMenu();
+    renderCart();
+    updateLogBadge();
+  </script>
+</body>
+</html>
