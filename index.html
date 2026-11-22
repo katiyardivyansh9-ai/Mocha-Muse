@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noir & Bean | Botanical Roastery & Café • Bidholi, Dehradun</title>
+  <title>Noir & Bean Café & Bar | Bidholi, Dehradun</title>
   <style>
     :root {
       --bg: #f6f7f2;
@@ -12,57 +12,55 @@
       --forest: #1f3a2e;
       --sage: #3b6e57;
       --sage-hover: #2c5543;
-      --sand: #d8c3a5;
+      --gold: #d8b480;
       --ink: #1a241f;
       --muted: #56665e;
       --border: #dce4dc;
       --danger: #b42318;
-      --shadow: 0 10px 28px rgba(31, 58, 46, 0.07);
+      --shadow: 0 10px 28px rgba(31, 58, 46, 0.08);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif; }
     body { background: var(--bg); color: var(--ink); line-height: 1.6; }
 
-    /* CENTERED EDITORIAL HEADER WITH N&B MONOGRAM LOGO */
+    /* HEADER WITH LOGO IMAGE */
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
       position: sticky; top: 0; z-index: 60;
-      padding: 14px 20px 12px;
-      box-shadow: 0 4px 16px rgba(31, 58, 46, 0.05);
+      padding: 12px 20px;
+      box-shadow: 0 4px 16px rgba(31, 58, 46, 0.06);
     }
     .mast {
-      max-width: 1140px; margin: 0 auto;
+      max-width: 1160px; margin: 0 auto;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
     }
     .brand {
-      display: flex; align-items: center; gap: 11px; cursor: pointer;
-      font-weight: 800; font-size: 1.32rem; color: var(--forest); letter-spacing: -0.02em;
+      display: flex; align-items: center; gap: 12px; cursor: pointer;
+      font-weight: 800; font-size: 1.3rem; color: var(--forest); letter-spacing: -0.02em;
     }
-    .nb-logo {
-      width: 40px; height: 40px; border-radius: 12px;
-      background: linear-gradient(135deg, #1f3a2e, #3b6e57);
-      color: #f3ece1; border: 1.5px solid #d8c3a5;
-      display: grid; place-items: center;
-      font-weight: 900; font-size: 0.92rem; letter-spacing: 0.03em;
-      box-shadow: 0 4px 10px rgba(31, 58, 46, 0.22);
+    .brand-logo {
+      width: 48px; height: 48px; border-radius: 12px; object-fit: cover;
+      background: #17120e; border: 1.5px solid var(--gold);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
     }
+    .brand-sub { display: block; font-size: 0.72rem; font-weight: 700; color: var(--sage); letter-spacing: 0.08em; text-transform: uppercase; }
     nav { display: flex; gap: 6px; flex-wrap: wrap; background: var(--tint); padding: 5px; border-radius: 14px; }
     .nav-btn {
       background: transparent; color: var(--muted); border: none;
-      padding: 8px 14px; border-radius: 10px; font-weight: 700; font-size: 0.86rem;
+      padding: 8px 13px; border-radius: 10px; font-weight: 700; font-size: 0.85rem;
       cursor: pointer; transition: 0.2s;
     }
     .nav-btn:hover { color: var(--forest); }
     .nav-btn.active { background: var(--forest); color: #fff; box-shadow: 0 3px 10px rgba(31, 58, 46, 0.2); }
 
-    main { max-width: 1140px; margin: 28px auto; padding: 0 18px 80px; }
+    main { max-width: 1160px; margin: 28px auto; padding: 0 18px 80px; }
     .page-view { display: none; animation: softFade 0.3s ease; }
     .page-view.active { display: block; }
     @keyframes softFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
-    /* BOTANICAL ARCH HERO */
+    /* HERO */
     .muse-hero {
-      background: linear-gradient(135deg, #1f3a2e 0%, #2e5443 100%);
+      background: linear-gradient(135deg, #1f3a2e 0%, #2b4d3e 100%);
       color: #f6f7f2; border-radius: 28px; padding: 38px 34px;
       display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center;
       margin-bottom: 32px; box-shadow: var(--shadow);
@@ -73,13 +71,15 @@
       border: 1px solid rgba(255, 255, 255, 0.25); color: #d8ece0;
       padding: 4px 13px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 14px;
     }
-    .muse-hero h1 { font-size: clamp(1.9rem, 3.8vw, 2.75rem); line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.02em; }
-    .muse-hero p { color: #dce7e0; font-size: 1rem; margin-bottom: 22px; max-width: 52ch; }
-    .arch-frame {
-      border-radius: 140px 140px 24px 24px; overflow: hidden; height: 310px;
-      border: 4px solid rgba(255, 255, 255, 0.18); box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+    .muse-hero h1 { font-size: clamp(1.9rem, 3.8vw, 2.7rem); line-height: 1.15; margin-bottom: 14px; letter-spacing: -0.02em; }
+    .muse-hero p { color: #dce7e0; font-size: 1rem; margin-bottom: 22px; max-width: 54ch; }
+    .hero-emblem {
+      background: #14100d; border-radius: 24px; padding: 18px;
+      border: 2px solid rgba(216, 180, 128, 0.45);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      display: flex; align-items: center; justify-content: center;
     }
-    .arch-frame img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-emblem img { width: 100%; max-width: 290px; height: 270px; object-fit: contain; border-radius: 16px; }
 
     .btn {
       background: var(--sage); color: #fff; border: none; padding: 11px 22px;
@@ -93,7 +93,7 @@
     .btn-ghost { background: transparent; color: var(--forest); border: 1.5px solid var(--border); }
     .btn-ghost:hover { border-color: var(--forest); background: var(--tint); }
 
-    /* FEATURE RIBBON */
+    /* RIBBON */
     .ribbon {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 14px; margin-bottom: 32px;
@@ -103,17 +103,17 @@
       padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px;
     }
     .rib-icon {
-      width: 38px; height: 38px; border-radius: 10px; background: var(--tint);
+      width: 40px; height: 40px; border-radius: 10px; background: var(--tint);
       color: var(--forest); display: grid; place-items: center; font-weight: 800; flex-shrink: 0; font-size: 0.85rem;
     }
     .rib-item b { display: block; font-size: 0.96rem; color: var(--forest); }
     .rib-item span { font-size: 0.82rem; color: var(--muted); }
 
-    .sec-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; margin: 26px 0 16px; }
+    .sec-head { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 10px; margin: 28px 0 16px; }
     .sec-head h2 { font-size: 1.55rem; color: var(--forest); letter-spacing: -0.02em; }
     .sec-head p { color: var(--muted); font-size: 0.92rem; }
 
-    /* VERTICAL BOTANICAL CARDS */
+    /* CARDS */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
     .m-card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
@@ -125,6 +125,7 @@
     .mc-body { padding: 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: space-between; }
     .tag { background: var(--tint); color: var(--forest); font-size: 0.73rem; padding: 3px 9px; border-radius: 999px; font-weight: 700; display: inline-block; }
     .tag-veg { background: #dcfce7; color: #166534; }
+    .tag-bar { background: #fef3c7; color: #92400e; }
     .meta { font-size: 0.84rem; color: var(--muted); }
     .price { font-weight: 800; font-size: 1.18rem; color: var(--forest); }
     .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
@@ -135,13 +136,12 @@
 
     .filter-bar { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
     .pills { display: flex; gap: 7px; flex-wrap: wrap; }
-    .pill { padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--bg); font-weight: 600; font-size: 0.84rem; cursor: pointer; color: var(--muted); }
+    .pill { padding: 7px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--bg); font-weight: 600; font-size: 0.83rem; cursor: pointer; color: var(--muted); }
     .pill.active { background: var(--forest); color: #fff; border-color: var(--forest); }
 
     input, select { width: 100%; padding: 10px 13px; border: 1.5px solid var(--border); border-radius: 11px; margin: 4px 0 11px; font-size: 0.93rem; background: #fbfcfa; color: var(--ink); }
     input:focus, select:focus { outline: none; border-color: var(--sage); background: #fff; }
     .bill-card { background: var(--tint); border: 1px solid var(--border); padding: 15px; border-radius: 14px; margin-top: 12px; font-size: 0.94rem; line-height: 1.8; }
-    .banner-ok { padding: 12px 14px; border-radius: 11px; margin-top: 12px; font-weight: 600; font-size: 0.88rem; background: #dcfce7; color: #166534; display: none; }
 
     /* NOIRPAY GATEWAY MODAL */
     .modal { display: none; position: fixed; inset: 0; background: rgba(18, 32, 25, 0.76); backdrop-filter: blur(4px); z-index: 100; place-items: center; padding: 16px; overflow-y: auto; }
@@ -167,8 +167,8 @@
     .receipt-box { background: #fafbf9; border: 1.5px dashed #9eb2a6; border-radius: 12px; padding: 15px; margin-top: 12px; font-size: 0.88rem; }
     .rl { display: flex; justify-content: space-between; padding: 4px 0; gap: 8px; }
 
-    .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); }
-    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 680px; }
+    .table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); margin-top: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.87rem; min-width: 700px; }
     th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #e6ede6; }
     th { background: var(--tint); color: var(--forest); font-weight: 700; }
 
@@ -179,16 +179,19 @@
   <header>
     <div class="mast">
       <div class="brand" onclick="switchPage('home')">
-        <div class="nb-logo">N&amp;B</div>
-        <span>Noir &amp; Bean</span>
+        <img src="logo.jpg" alt="Noir & Bean Logo" class="brand-logo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2317120e%22/><text x=%2250%22 y=%2260%22 font-family=%22Georgia,serif%22 font-size=%2234%22 font-weight=%22bold%22 fill=%22%23d8b480%22 text-anchor=%22middle%22>N%26B</text></svg>'" />
+        <div>
+          <span>Noir &amp; Bean</span>
+          <span class="brand-sub">Café &amp; Lounge Bar</span>
+        </div>
       </div>
       <nav>
         <button id="nav-home" class="nav-btn active" onclick="switchPage('home')">Home</button>
-        <button id="nav-menu" class="nav-btn" onclick="switchPage('menu')">Menu</button>
-        <button id="nav-table" class="nav-btn" onclick="switchPage('table')">Book Table</button>
+        <button id="nav-menu" class="nav-btn" onclick="switchPage('menu')">Café &amp; Bar Menu</button>
+        <button id="nav-table" class="nav-btn" onclick="switchPage('table')">Book Table (₹500)</button>
         <button id="nav-about" class="nav-btn" onclick="switchPage('about')">Story &amp; Visit</button>
         <button id="nav-order" class="nav-btn" onclick="switchPage('order')">Tray (<span id="trayCount">0</span>)</button>
-        <button id="nav-logs" class="nav-btn" onclick="switchPage('logs')">Payment Log (<span id="logCount">0</span>)</button>
+        <button id="nav-logs" class="nav-btn" onclick="switchPage('logs')">Logs (<span id="logCount">0</span>)</button>
       </nav>
     </div>
   </header>
@@ -199,122 +202,124 @@
       <div class="muse-hero">
         <div>
           <span class="eyebrow">Main Bidholi Road, Near UPES Campus • Dehradun</span>
-          <h1>Botanical Roasts, Matcha &amp; Artisanal Plates</h1>
-          <p>A serene sage-green coffee sanctuary right next to UPES Bidholi. Grab a ₹1 Melody toffee, ₹50 kulhad chai, single-estate espresso, and GST-free sourdough bakes.</p>
+          <h1>Specialty Coffee, Craft Bar &amp; Artisanal Plates</h1>
+          <p>From ₹1 Melody toffees and ₹50 kulhad chai to signature cocktails, single malt whisky, vodka, mocktails, and GST-free sourdough bakes.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button class="btn btn-cream" onclick="switchPage('menu')">Explore Full Menu →</button>
-            <button class="btn" style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.3)" onclick="switchPage('table')">🪑 Book a Table</button>
+            <button class="btn btn-cream" onclick="switchPage('menu')">Explore Café &amp; Bar Menu →</button>
+            <button class="btn" style="background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.3)" onclick="switchPage('table')">🪑 Book Table (₹500)</button>
           </div>
         </div>
-        <div class="arch-frame">
-          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Noir and Bean Botanical Cafe" />
+        <div class="hero-emblem">
+          <img src="logo.jpg" alt="Noir & Bean Emblem" onerror="this.src='https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80'" />
         </div>
       </div>
 
       <div class="ribbon">
-        <div class="rib-item"><div class="rib-icon">₹1</div><div><b>₹1 Melody &amp; ₹50 Chai</b><span>Sweet counter treats &amp; student value menu</span></div></div>
-        <div class="rib-item"><div class="rib-icon">0%</div><div><b>100% GST-Free Billing</b><span>Pay exact menu prices with zero extra tax</span></div></div>
-        <div class="rib-item"><div class="rib-icon">⚡</div><div><b>300 Mbps Study Pods</b><span>Quiet booths with charging near UPES</span></div></div>
-        <div class="rib-item"><div class="rib-icon">20%</div><div><b>Code: NOIR20</b><span>Instant discount on orders ₹300 &amp; above</span></div></div>
+        <div class="rib-item"><div class="rib-icon">₹1</div><div><b>₹1 Melody &amp; ₹50 Chai</b><span>Counter treats &amp; student value menu</span></div></div>
+        <div class="rib-item"><div class="rib-icon">🍸</div><div><b>Craft Bar &amp; Mocktails</b><span>Vodka, whisky, cocktails, shots &amp; coolers</span></div></div>
+        <div class="rib-item"><div class="rib-icon">0%</div><div><b>100% GST-Free Billing</b><span>Pay exact menu prices with zero tax</span></div></div>
+        <div class="rib-item"><div class="rib-icon">🪑</div><div><b>₹500 Table Reservation</b><span>Instant booking with live history log</span></div></div>
       </div>
 
       <div class="sec-head">
         <div>
-          <h2>Signature Creations at Noir &amp; Bean</h2>
+          <h2>Signature Café &amp; Bar Highlights</h2>
           <p>Tap any item below to add it straight to your order tray.</p>
         </div>
-        <button class="btn btn-ghost" onclick="switchPage('menu')">View All 13 Items</button>
+        <button class="btn btn-ghost" onclick="switchPage('menu')">View Full Menu (20 Items)</button>
       </div>
 
       <div class="grid">
         <div class="m-card">
           <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80" alt="Melody Chocolaty Toffee" />
           <div class="mc-body">
-            <div><span class="tag">Sweet Bite • ₹1</span><h3 style="margin-top:7px">Melody Chocolaty Toffee</h3><p class="meta">Classic caramel &amp; rich chocolaty center toffee—perfect sweet finisher after your brew.</p></div>
+            <div><span class="tag">Sweet Bite • ₹1</span><h3 style="margin-top:7px">Melody Chocolaty Toffee</h3><p class="meta">Classic caramel &amp; rich chocolaty center toffee—sweet finisher after any drink.</p></div>
             <div class="row" style="margin-top:8px"><span class="price">₹1</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(13)">Order • ₹1</button></div>
           </div>
         </div>
 
         <div class="m-card">
-          <img src="https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80" alt="Adrak Elaichi Kulhad Chai" />
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Smoked Espresso Martini Cocktail" />
           <div class="mc-body">
-            <div><span class="tag">Student Favorite • ₹50</span><h3 style="margin-top:7px">Adrak Elaichi Kulhad Chai</h3><p class="meta">Freshly crushed ginger, green cardamom &amp; Assam orthodox tea simmered in farm milk.</p></div>
-            <div class="row" style="margin-top:8px"><span class="price">₹50</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(1)">Order • ₹50</button></div>
+            <div><span class="tag tag-bar">Bar Signature • Cocktail</span><h3 style="margin-top:7px">Noir Espresso Martini</h3><p class="meta">Triple-distilled vodka shaken with fresh Chikmagalur espresso &amp; coffee liqueur.</p></div>
+            <div class="row" style="margin-top:8px"><span class="price">₹340</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(16)">Order • ₹340</button></div>
           </div>
         </div>
 
         <div class="m-card">
-          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" alt="Smoked Paneer Pesto Sourdough" />
+          <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80" alt="Virgin Mint Mojito Mocktail" />
           <div class="mc-body">
-            <div><span class="tag">Artisanal Plate • 2 Slices</span><h3 style="margin-top:7px">Smoked Paneer Pesto Sourdough</h3><p class="meta">Chargrilled cottage cheese, fresh basil pesto &amp; roasted tomatoes on 24-hr sourdough.</p></div>
-            <div class="row" style="margin-top:8px"><span class="price">₹240</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(11)">Order • ₹240</button></div>
+            <div><span class="tag tag-veg">Zero-Proof Mocktail</span><h3 style="margin-top:7px">Virgin Mint &amp; Lime Mojito</h3><p class="meta">Muddled garden mint, fresh key lime, cane sugar &amp; chilled sparkling club soda.</p></div>
+            <div class="row" style="margin-top:8px"><span class="price">₹160</span><button class="btn" style="padding:8px 15px" onclick="quickOrder(17)">Order • ₹160</button></div>
           </div>
         </div>
       </div>
 
       <div class="panel two-col" style="margin-top:32px;align-items:center">
-        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Noir and Bean Roastery" style="width:100%;height:255px;object-fit:cover;border-radius:16px" />
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80" alt="Noir and Bean Lounge" style="width:100%;height:255px;object-fit:cover;border-radius:16px" />
         <div>
-          <span class="tag" style="margin-bottom:8px">Our Café Story</span>
-          <h2 style="font-size:1.5rem;color:var(--forest);margin-bottom:10px">Where Botanical Calm Meets Single-Estate Coffee</h2>
-          <p class="meta" style="font-size:0.92rem;margin-bottom:10px">Noir &amp; Bean was designed as a peaceful green retreat beside UPES Bidholi—a place where students can unwind over small-batch Chikmagalur roasts, ceremonial matcha, and warm pastries.</p>
-          <p class="meta" style="font-size:0.92rem;margin-bottom:16px">Every cup is brewed fresh to order with transparent GST-free pricing and 100% plastic-free, biodegradable packaging.</p>
+          <span class="tag" style="margin-bottom:8px">Our Story</span>
+          <h2 style="font-size:1.5rem;color:var(--forest);margin-bottom:10px">Daytime Specialty Roastery, Evening Craft Lounge</h2>
+          <p class="meta" style="font-size:0.92rem;margin-bottom:10px">Noir &amp; Bean brings single-estate Chikmagalur coffee, fresh bakery pastries, and a curated evening bar together right beside UPES Bidholi.</p>
+          <p class="meta" style="font-size:0.92rem;margin-bottom:16px">Enjoy 100% GST-free billing, instant UPI verification, and dedicated ₹500 lounge table reservations.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button class="btn" onclick="switchPage('about')">Read Full Story</button>
-            <button class="btn btn-ghost" onclick="switchPage('table')">Reserve Study Table</button>
+            <button class="btn" onclick="switchPage('menu')">Browse Full Menu</button>
+            <button class="btn btn-ghost" onclick="switchPage('table')">Book Table &amp; View History</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PAGE 2: MENU -->
+    <!-- PAGE 2: FULL CAFE & BAR MENU -->
     <section id="view-menu" class="page-view">
       <div class="sec-head">
         <div>
-          <h2>Explore Full Menu (Prices in ₹ • GST-Free)</h2>
+          <h2>Café &amp; Bar Menu (Prices in ₹ • GST-Free)</h2>
           <p>Apply promo code <b>NOIR20</b> in your tray on orders ₹300+ for 20% off.</p>
         </div>
       </div>
 
       <div class="filter-bar">
         <div class="pills">
-          <button class="pill active" onclick="filterCat('All', this)">All (13)</button>
-          <button class="pill" onclick="filterCat('Coffee & Botanicals', this)">Coffee &amp; Botanicals</button>
-          <button class="pill" onclick="filterCat('Pastries & Bakery', this)">Pastries &amp; Bakery</button>
-          <button class="pill" onclick="filterCat('Sourdough Plates', this)">Sourdough Plates</button>
+          <button class="pill active" onclick="filterCat('All', this)">All (20)</button>
+          <button class="pill" onclick="filterCat('Bar & Spirits', this)">🍸 Vodka, Whisky &amp; Shots</button>
+          <button class="pill" onclick="filterCat('Cocktails & Mocktails', this)">🍹 Cocktails &amp; Mocktails</button>
+          <button class="pill" onclick="filterCat('Cold Drinks & Water', this)">🥤 Cold Drinks &amp; Water</button>
+          <button class="pill" onclick="filterCat('Coffee & Chai', this)">☕ Coffee &amp; Chai</button>
+          <button class="pill" onclick="filterCat('Pastries & Plates', this)">🥐 Pastries &amp; Plates</button>
         </div>
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-          <input id="searchBox" placeholder="Search melody, matcha, chai..." oninput="renderMenu()" style="width:205px;margin:0;padding:8px 12px" />
-          <label style="font-weight:600;font-size:0.88rem;cursor:pointer"><input type="checkbox" id="veganOnly" onchange="renderMenu()" style="width:auto;margin:0 6px 0 0" />Vegan Only</label>
+          <input id="searchBox" placeholder="Search vodka, whisky, mocktail, melody..." oninput="renderMenu()" style="width:225px;margin:0;padding:8px 12px" />
+          <label style="font-weight:600;font-size:0.88rem;cursor:pointer"><input type="checkbox" id="veganOnly" onchange="renderMenu()" style="width:auto;margin:0 6px 0 0" />Vegan / Zero-Proof</label>
         </div>
       </div>
 
       <div class="grid" id="menuGrid"></div>
     </section>
 
-    <!-- PAGE 3: BOOK A TABLE -->
+    <!-- PAGE 3: BOOK A TABLE (₹500) + BOOKING HISTORY -->
     <section id="view-table" class="page-view">
       <div class="sec-head">
         <div>
-          <h2>Book a Table at Noir &amp; Bean</h2>
-          <p>Reserve a quiet indoor study booth or sunlit garden table near UPES Bidholi.</p>
+          <h2>Book a Table at Noir &amp; Bean (₹500 Reservation)</h2>
+          <p>Pay ₹500 booking fee via UPI/Card to lock your booth—fully redeemable against your café &amp; bar bill.</p>
         </div>
       </div>
       <div class="two-col">
         <div class="panel">
-          <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=80" alt="Cafe Seating" style="width:100%;height:215px;object-fit:cover;border-radius:14px;margin-bottom:14px" />
-          <h3 style="color:var(--forest);margin-bottom:8px">Seating Zones &amp; Café Details</h3>
-          <p class="meta" style="margin-bottom:6px"><b>• Botanical Study Lounge:</b> Individual charging sockets + 300 Mbps fiber Wi-Fi.</p>
-          <p class="meta" style="margin-bottom:6px"><b>• Courtyard Herb Patio:</b> Fresh Dehradun mountain air, ideal for evening hangouts.</p>
-          <p class="meta" style="margin-bottom:6px"><b>• Address:</b> Main Bidholi Road, Near UPES Campus Gate, Dehradun, Uttarakhand 248007</p>
-          <p class="meta"><b>• Hours:</b> 7:30 AM – 10:30 PM (All Days)</p>
+          <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=700&q=80" alt="Lounge Seating" style="width:100%;height:215px;object-fit:cover;border-radius:14px;margin-bottom:14px" />
+          <h3 style="color:var(--forest);margin-bottom:8px">Lounge Zones &amp; Reservation Policy</h3>
+          <p class="meta" style="margin-bottom:6px"><b>• Reservation Fee:</b> ₹500 flat per table (GST-Free, 100% adjustable in final bill).</p>
+          <p class="meta" style="margin-bottom:6px"><b>• Botanical Study Lounge:</b> Charging sockets + 300 Mbps Wi-Fi.</p>
+          <p class="meta" style="margin-bottom:6px"><b>• Velvet Bar &amp; Patio Booths:</b> Evening cocktails, mocktails &amp; music lounge.</p>
+          <p class="meta"><b>• Location:</b> Main Bidholi Road, Near UPES Campus Gate, Dehradun 248007</p>
         </div>
 
         <div class="panel">
-          <form onsubmit="confirmBooking(event)">
-            <h3 style="color:var(--forest);margin-bottom:10px">Instant Table Reservation</h3>
+          <form onsubmit="startTableBookingPayment(event)">
+            <h3 style="color:var(--forest);margin-bottom:10px">Reserve Table • ₹500</h3>
             <label style="font-weight:600;font-size:0.88rem">Full Name *</label>
-            <input id="bkName" required placeholder="Enter your name" />
+            <input id="bkName" required placeholder="Enter guest name" />
             <label style="font-weight:600;font-size:0.88rem">Mobile Number (10 digits) *</label>
             <input id="bkPhone" pattern="[0-9]{10}" required placeholder="e.g. 9876543210" />
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
@@ -327,22 +332,46 @@
                 <select id="bkGuests">
                   <option>2 Guests</option>
                   <option>4 Guests</option>
-                  <option>6 Guests (Group)</option>
-                  <option>1 Person (Solo Study)</option>
+                  <option>6 Guests (VIP Lounge)</option>
+                  <option>1 Person (Solo Booth)</option>
                 </select>
               </div>
             </div>
             <label style="font-weight:600;font-size:0.88rem">Time Slot &amp; Zone</label>
             <select id="bkSlot">
               <option>11:00 AM — Botanical Study Lounge</option>
-              <option>02:00 PM — Window Espresso Bar</option>
-              <option>05:30 PM — Courtyard Herb Patio</option>
-              <option>08:00 PM — Evening Coffee Booth</option>
+              <option>02:30 PM — Window Espresso Bar</option>
+              <option>06:00 PM — Velvet Bar &amp; Mocktail Lounge</option>
+              <option>08:30 PM — Evening Patio Booth</option>
             </select>
-            <button type="submit" class="btn" style="width:100%;justify-content:center;margin-top:6px">Confirm Table Reservation →</button>
-            <div id="bookingStatus" class="banner-ok"></div>
+            <button type="submit" class="btn" style="width:100%;justify-content:center;margin-top:6px">Pay ₹500 &amp; Confirm Booking →</button>
           </form>
         </div>
+      </div>
+
+      <!-- LIVE TABLE BOOKING HISTORY -->
+      <div class="sec-head" style="margin-top:34px">
+        <div>
+          <h2>Table Booking History (<span id="bkHistCount">0</span>)</h2>
+          <p>Verified ₹500 table reservations stored in live lounge records.</p>
+        </div>
+        <button type="button" class="btn btn-ghost" onclick="clearBookingHistory()">Clear Booking History</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Guest Name &amp; Phone</th>
+              <th>Date &amp; Time Slot</th>
+              <th>Guests</th>
+              <th>Booking Paid</th>
+              <th>UTR / Ref No.</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="bookingHistoryBody"></tbody>
+        </table>
       </div>
     </section>
 
@@ -351,25 +380,25 @@
       <div class="sec-head">
         <div>
           <h2>Our Story &amp; Bidholi Location</h2>
-          <p>Botanical coffee craft and fresh baking in the foothills of Dehradun.</p>
+          <p>Specialty coffee roastery, artisanal bakery, and craft lounge in Dehradun.</p>
         </div>
       </div>
       <div class="two-col">
         <div class="panel">
           <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80" alt="Cafe Story" style="width:100%;height:215px;object-fit:cover;border-radius:14px;margin-bottom:14px" />
           <h3 style="color:var(--forest);margin-bottom:8px">The Noir &amp; Bean Story</h3>
-          <p class="meta" style="margin-bottom:8px">Founded in 2026 in Bidholi, Dehradun, Noir &amp; Bean brings together small-batch Indian specialty coffee, botanical teas, and warm morning bakes in a calm sage-green space.</p>
-          <p class="meta">We partner directly with Chikmagalur estates for medium-dark Arabica roasts and serve every order GST-free in 100% plastic-free, compostable packaging.</p>
+          <p class="meta" style="margin-bottom:8px">Founded in 2026 in Bidholi, Dehradun, Noir &amp; Bean blends small-batch Chikmagalur coffee craftsmanship with an inviting evening bar featuring premium spirits, shots, cocktails, and zero-proof mocktails.</p>
+          <p class="meta">Every order is billed 100% GST-free and served with eco-friendly packaging.</p>
         </div>
         <div class="panel">
           <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80" alt="Location" style="width:100%;height:215px;object-fit:cover;border-radius:14px;margin-bottom:14px" />
           <h3 style="color:var(--forest);margin-bottom:8px">Visit Us in Dehradun</h3>
           <p class="meta" style="margin-bottom:6px"><b>Address:</b> Main Bidholi Road, Near UPES Campus Gate, Bidholi, Dehradun, Uttarakhand 248007</p>
-          <p class="meta" style="margin-bottom:6px"><b>Hours:</b> Monday – Sunday, 7:30 AM to 10:30 PM</p>
+          <p class="meta" style="margin-bottom:6px"><b>Hours:</b> Monday – Sunday, 7:30 AM to 11:30 PM</p>
           <p class="meta" style="margin-bottom:14px"><b>Contact &amp; UPI:</b> +91 98370 41210 • <code>7668441481@ptyes</code></p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <button class="btn" onclick="switchPage('menu')">Order Pickup →</button>
-            <button class="btn btn-ghost" onclick="switchPage('table')">Book a Table</button>
+            <button class="btn" onclick="switchPage('menu')">Explore Menu →</button>
+            <button class="btn btn-ghost" onclick="switchPage('table')">Book Table (₹500)</button>
           </div>
         </div>
       </div>
@@ -398,7 +427,7 @@
         </div>
 
         <div class="panel">
-          <form onsubmit="openPaymentModal(event)">
+          <form onsubmit="openOrderPaymentModal(event)">
             <h3 style="color:var(--forest);margin-bottom:10px">Pickup &amp; Customer Details</h3>
             <label style="font-weight:600;font-size:0.88rem">Full Name *</label>
             <input id="custName" required placeholder="Enter your full name" />
@@ -407,7 +436,7 @@
             <label style="font-weight:600;font-size:0.88rem">Order Mode</label>
             <select id="custSlot">
               <option>Express Counter Pickup (10–15 mins) — Bidholi</option>
-              <option>Dine-In Table — Near UPES Campus Gate</option>
+              <option>Lounge Table Service — Near UPES Campus Gate</option>
             </select>
             <button type="submit" class="btn" style="width:100%;justify-content:center;margin-top:8px">Proceed to NoirPay Checkout →</button>
           </form>
@@ -420,17 +449,17 @@
       <div class="sec-head">
         <div>
           <h2>Counter Payment &amp; UTR Log</h2>
-          <p>Live record of verified orders, payment apps, and 12-digit UTR references.</p>
+          <p>Live record of all food, bar, and ₹500 table booking transactions.</p>
         </div>
-        <button type="button" class="btn btn-ghost" onclick="clearLogs()">Clear History</button>
+        <button type="button" class="btn btn-ghost" onclick="clearLogs()">Clear Payment Logs</button>
       </div>
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Order ID &amp; Time</th>
+              <th>Ref / Order ID</th>
               <th>Customer &amp; Phone</th>
-              <th>Payment Mode / App</th>
+              <th>Type &amp; App</th>
               <th>UTR / Ref No.</th>
               <th>Amount</th>
               <th>Status</th>
@@ -442,12 +471,12 @@
     </section>
   </main>
 
-  <!-- NOIRPAY GATEWAY MODAL -->
+  <!-- NOIRPAY GATEWAY MODAL (FOR BOTH ORDERS & ₹500 TABLE BOOKING) -->
   <div class="modal" id="payModal">
     <div class="gw-box">
       <div class="gw-head">
         <div>
-          <b>NoirPay Secure Checkout</b>
+          <b id="gwTitle">NoirPay Secure Checkout</b>
           <small>Noir &amp; Bean • Bidholi, Dehradun (GST-Free)</small>
         </div>
         <div style="display:flex;align-items:center;gap:10px">
@@ -473,7 +502,7 @@
     <div class="gw-box">
       <div class="gw-head" style="justify-content:center;text-align:center">
         <div>
-          <b style="font-size:1.1rem">✅ Payment Verified</b>
+          <b style="font-size:1.1rem" id="recHeading">✅ Payment Verified</b>
           <small>Noir &amp; Bean • Main Bidholi Road, Near UPES, Dehradun</small>
         </div>
       </div>
@@ -488,35 +517,46 @@
   </div>
 
   <footer>
-    <b>Noir &amp; Bean — Botanical Roastery &amp; Café</b><br />
+    <b>Noir &amp; Bean — Café &amp; Lounge Bar</b><br />
     Main Bidholi Road, Near UPES Campus Gate, Dehradun, Uttarakhand 248007
   </footer>
 
   <script>
     const UPI_ID = "7668441481@ptyes";
+    const BOOKING_FEE = 500;
 
     const MENU = [
-      { id: 13, name: "Melody Chocolaty Toffee", cat: "Pastries & Bakery", price: 1, vegan: false, desc: "Classic caramel & rich chocolaty center toffee—sweet bite after any coffee or chai.", img: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80" },
-      { id: 1, name: "Adrak Elaichi Kulhad Chai", cat: "Coffee & Botanicals", price: 50, vegan: false, desc: "Crushed fresh ginger, green cardamom & Assam tea simmered in farm milk.", img: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80" },
-      { id: 2, name: "Chikmagalur Pour-Over Black", cat: "Coffee & Botanicals", price: 140, vegan: true, desc: "Single-estate medium roast brewed via V60 with citrus & jaggery notes.", img: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" },
-      { id: 3, name: "Hazelnut Velvet Flat White", cat: "Coffee & Botanicals", price: 180, vegan: false, desc: "Double Arabica espresso shot with silky micro-foamed milk & roasted hazelnut.", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" },
-      { id: 4, name: "Iced Ceremonial Matcha Latte", cat: "Coffee & Botanicals", price: 195, vegan: true, desc: "Whisked shade-grown green tea layered over chilled oat milk & organic honey.", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=600&q=80" },
-      { id: 5, name: "Warm Garlic Herb Bun", cat: "Pastries & Bakery", price: 65, vegan: false, desc: "Oven-warm soft brioche bun brushed with roasted garlic & herb butter.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" },
-      { id: 6, name: "Belgian Chocolate Pastry", cat: "Pastries & Bakery", price: 135, vegan: false, desc: "Rich 70% dark cocoa sponge layered with silky ganache & hazelnut crunch.", img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" },
-      { id: 7, name: "Red Velvet Cream Pastry", cat: "Pastries & Bakery", price: 145, vegan: false, desc: "Crimson cocoa velvet sponge frosted with Madagascar vanilla cream cheese.", img: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=600&q=80" },
-      { id: 8, name: "Blueberry Cheesecake Slice", cat: "Pastries & Bakery", price: 165, vegan: false, desc: "Creamy baked cheesecake on a buttery biscuit crust with blueberry compote.", img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=600&q=80" },
-      { id: 9, name: "Almond Butter Croissant", cat: "Pastries & Bakery", price: 175, vegan: false, desc: "Twice-baked flaky butter croissant filled with roasted almond frangipane.", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" },
-      { id: 10, name: "Cinnamon Churros & Dip", cat: "Pastries & Bakery", price: 120, vegan: true, desc: "Crisp golden pastry sticks dusted with cinnamon sugar & dark chocolate dip.", img: "https://images.unsplash.com/photo-1624371414361-e670edf4898d?auto=format&fit=crop&w=600&q=80" },
-      { id: 11, name: "Smoked Paneer Pesto Sourdough", cat: "Sourdough Plates", price: 240, vegan: false, desc: "Chargrilled cottage cheese, fresh basil pesto & tomatoes on sourdough.", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" },
-      { id: 12, name: "Truffle Mushroom Tartine", cat: "Sourdough Plates", price: 230, vegan: true, desc: "Garlic-roasted wild mushrooms over whipped chickpea tahini on sourdough.", img: "https://images.unsplash.com/photo-1525351484163-7529414342d8?auto=format&fit=crop&w=600&q=80" }
+      { id: 13, name: "Melody Chocolaty Toffee", cat: "Pastries & Plates", price: 1, vegan: false, desc: "Classic caramel & rich chocolaty center toffee—sweet counter treat.", img: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=600&q=80" },
+      { id: 14, name: "Absolut Craft Vodka (60 ml)", cat: "Bar & Spirits", price: 290, vegan: true, desc: "Chilled Swedish winter-wheat vodka served neat, on the rocks, or with lime.", img: "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=600&q=80" },
+      { id: 15, name: "Glenfiddich 12Y Single Malt Whisky (60 ml)", cat: "Bar & Spirits", price: 480, vegan: true, desc: "Smooth Highland single malt Scotch with pear, oak & subtle butterscotch notes.", img: "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=600&q=80" },
+      { id: 18, name: "Silver Tequila & Espresso Shots (2 Pcs)", cat: "Bar & Spirits", price: 260, vegan: true, desc: "Twin chilled agave & roasted coffee shots served with sea salt & orange wedge.", img: "https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?auto=format&fit=crop&w=600&q=80" },
+      { id: 16, name: "Noir Espresso Martini Cocktail", cat: "Cocktails & Mocktails", price: 340, vegan: true, desc: "Triple-distilled vodka shaken with fresh Chikmagalur espresso & coffee liqueur.", img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" },
+      { id: 19, name: "Smoked Whisky Old Fashioned Cocktail", cat: "Cocktails & Mocktails", price: 360, vegan: true, desc: "Bourbon & malt whisky stirred with aromatic bitters, demerara & charred orange peel.", img: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=600&q=80" },
+      { id: 17, name: "Virgin Mint & Lime Mojito (Mocktail)", cat: "Cocktails & Mocktails", price: 160, vegan: true, desc: "Muddled garden mint, fresh key lime, cane sugar & chilled sparkling club soda.", img: "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80" },
+      { id: 20, name: "Blue Curacao Citrus Cooler (Mocktail)", cat: "Cocktails & Mocktails", price: 170, vegan: true, desc: "Zero-proof zesty orange-curacao fizz layered over crushed ice & sweet basil.", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" },
+      { id: 21, name: "Chilled Aerated Cold Drink (330 ml)", cat: "Cold Drinks & Water", price: 45, vegan: true, desc: "Ice-cold Coke / Sprite / Ginger Ale served in a frosted glass with lemon slice.", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=600&q=80" },
+      { id: 22, name: "Himalayan Mineral Water Bottle (1 L)", cat: "Cold Drinks & Water", price: 20, vegan: true, desc: "Sealed natural mountain mineral drinking water bottle (chilled or room temp).", img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=600&q=80" },
+      { id: 1, name: "Adrak Elaichi Kulhad Chai", cat: "Coffee & Chai", price: 50, vegan: false, desc: "Crushed fresh ginger, green cardamom & Assam tea simmered in farm milk.", img: "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?auto=format&fit=crop&w=600&q=80" },
+      { id: 2, name: "Chikmagalur Pour-Over Black", cat: "Coffee & Chai", price: 140, vegan: true, desc: "Single-estate medium roast brewed via V60 with citrus & jaggery notes.", img: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=600&q=80" },
+      { id: 3, name: "Hazelnut Velvet Flat White", cat: "Coffee & Chai", price: 180, vegan: false, desc: "Double Arabica espresso shot with silky micro-foamed milk & roasted hazelnut.", img: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=600&q=80" },
+      { id: 4, name: "Iced Ceremonial Matcha Latte", cat: "Coffee & Chai", price: 195, vegan: true, desc: "Whisked shade-grown green tea layered over chilled oat milk & organic honey.", img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?auto=format&fit=crop&w=600&q=80" },
+      { id: 5, name: "Warm Garlic Herb Bun", cat: "Pastries & Plates", price: 65, vegan: false, desc: "Oven-warm soft brioche bun brushed with roasted garlic & herb butter.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" },
+      { id: 6, name: "Belgian Chocolate Pastry", cat: "Pastries & Plates", price: 135, vegan: false, desc: "Rich 70% dark cocoa sponge layered with silky ganache & hazelnut crunch.", img: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" },
+      { id: 7, name: "Red Velvet Cream Pastry", cat: "Pastries & Plates", price: 145, vegan: false, desc: "Crimson cocoa velvet sponge frosted with Madagascar vanilla cream cheese.", img: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=600&q=80" },
+      { id: 9, name: "Almond Butter Croissant", cat: "Pastries & Plates", price: 175, vegan: false, desc: "Twice-baked flaky butter croissant filled with roasted almond frangipane.", img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80" },
+      { id: 11, name: "Smoked Paneer Pesto Sourdough", cat: "Pastries & Plates", price: 240, vegan: false, desc: "Chargrilled cottage cheese, fresh basil pesto & tomatoes on sourdough.", img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" },
+      { id: 12, name: "Truffle Mushroom Tartine", cat: "Pastries & Plates", price: 230, vegan: true, desc: "Garlic-roasted wild mushrooms over whipped chickpea tahini on sourdough.", img: "https://images.unsplash.com/photo-1525351484163-7529414342d8?auto=format&fit=crop&w=600&q=80" }
     ];
 
     let cart = [];
     let paymentLogs = JSON.parse(localStorage.getItem("nb_payment_logs") || "[]");
+    let bookingLogs = JSON.parse(localStorage.getItem("nb_booking_logs") || "[]");
     let activeCat = "All";
     let discountRate = 0;
     let payMode = "upi";
-    let subTotal = 0, discAmt = 0, finalTotal = 0;
+    let checkoutContext = "order"; // "order" or "booking"
+    let pendingBooking = null;
+    let subTotal = 0, discAmt = 0, finalTotal = 0, activePayable = 0;
 
     function switchPage(pageId) {
       document.querySelectorAll(".page-view").forEach(p => p.classList.remove("active"));
@@ -524,6 +564,7 @@
       document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
       document.getElementById("nav-" + pageId).classList.add("active");
       if (pageId === "logs") renderLogs();
+      if (pageId === "table") renderBookingHistory();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -540,7 +581,7 @@
       const filtered = MENU.filter(item =>
         (activeCat === "All" || item.cat === activeCat) &&
         (!veganOnly || item.vegan) &&
-        (item.name.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query))
+        (item.name.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query) || item.cat.toLowerCase().includes(query))
       );
       document.getElementById("menuGrid").innerHTML = filtered.length ? filtered.map(item => `
         <div class="m-card">
@@ -548,8 +589,8 @@
           <div class="mc-body">
             <div>
               <div style="display:flex;gap:6px;flex-wrap:wrap">
-                <span class="tag">${item.cat}</span>
-                ${item.vegan ? '<span class="tag tag-veg">Vegan</span>' : ''}
+                <span class="tag ${item.cat.includes('Bar') || item.cat.includes('Cocktails') ? 'tag-bar' : ''}">${item.cat}</span>
+                ${item.vegan ? '<span class="tag tag-veg">Vegan / Pure</span>' : ''}
               </div>
               <h3 style="margin-top:7px">${item.name}</h3>
               <p class="meta" style="margin-top:4px">${item.desc}</p>
@@ -611,7 +652,7 @@
               <button type="button" onclick="changeQty(${item.id}, 1)" style="padding:3px 10px;border-radius:7px;border:1px solid var(--border);cursor:pointer">+</button>
             </div>
           </div>`;
-      }).join("") : "<p class='meta'>Your tray is empty. Explore the Menu tab to add drinks, toffees, or bakes.</p>";
+      }).join("") : "<p class='meta'>Your tray is empty. Explore the Menu tab to add drinks, bar items, or bakes.</p>";
 
       subTotal = cart.reduce((sum, c) => sum + MENU.find(m => m.id === c.id).price * c.qty, 0);
       if (subTotal < 300 && discountRate > 0) {
@@ -629,18 +670,6 @@
       `;
     }
 
-    function confirmBooking(e) {
-      e.preventDefault();
-      const name = document.getElementById("bkName").value.trim();
-      const date = document.getElementById("bkDate").value;
-      const guests = document.getElementById("bkGuests").value;
-      const slot = document.getElementById("bkSlot").value;
-      const ref = "NB-TBL-" + Math.floor(1000 + Math.random() * 9000);
-      const banner = document.getElementById("bookingStatus");
-      banner.style.display = "block";
-      banner.textContent = `✅ Table Booked (${ref}) for ${name} (${guests}) on ${date} at ${slot}.`;
-    }
-
     function updateTracker(text, status) {
       const box = document.getElementById("trackerBox");
       box.className = "tracker" + (status ? " " + status : "");
@@ -649,7 +678,7 @@
 
     function copyUpiId() {
       navigator.clipboard?.writeText(UPI_ID);
-      updateTracker("📋 Copied " + UPI_ID + "! Pay ₹" + finalTotal + " in any UPI app & enter 12-digit UTR below.", "");
+      updateTracker("📋 Copied " + UPI_ID + "! Pay ₹" + activePayable + " in any UPI app & enter 12-digit UTR below.", "");
     }
 
     function launchUpi(appName, scheme) {
@@ -659,10 +688,30 @@
       window.location.href = scheme;
     }
 
-    function openPaymentModal(e) {
+    function openOrderPaymentModal(e) {
       e.preventDefault();
       if (!cart.length) return alert("Your tray is empty! Add at least one item first.");
-      document.getElementById("modalPayAmt").textContent = "₹" + finalTotal;
+      checkoutContext = "order";
+      activePayable = finalTotal;
+      document.getElementById("gwTitle").textContent = "NoirPay Order Checkout";
+      document.getElementById("modalPayAmt").textContent = "₹" + activePayable;
+      selectPayMode("upi");
+      document.getElementById("payModal").classList.add("open");
+    }
+
+    function startTableBookingPayment(e) {
+      e.preventDefault();
+      checkoutContext = "booking";
+      activePayable = BOOKING_FEE;
+      pendingBooking = {
+        name: document.getElementById("bkName").value.trim(),
+        phone: document.getElementById("bkPhone").value.trim(),
+        date: document.getElementById("bkDate").value,
+        guests: document.getElementById("bkGuests").value,
+        slot: document.getElementById("bkSlot").value
+      };
+      document.getElementById("gwTitle").textContent = "Table Reservation Payment";
+      document.getElementById("modalPayAmt").textContent = "₹" + activePayable;
       selectPayMode("upi");
       document.getElementById("payModal").classList.add("open");
     }
@@ -676,14 +725,15 @@
       document.querySelectorAll(".popt").forEach(el => el.classList.remove("active"));
       document.getElementById("opt-" + mode).classList.add("active");
       const body = document.getElementById("payModeBody");
-      const params = `pa=${UPI_ID}&pn=Noir%20and%20Bean&am=${finalTotal}&cu=INR&tn=CafeOrder`;
+      const note = checkoutContext === "booking" ? "TableBooking" : "CafeBarOrder";
+      const params = `pa=${UPI_ID}&pn=Noir%20and%20Bean&am=${activePayable}&cu=INR&tn=${note}`;
       const genericUpi = `upi://pay?${params}`;
       const gpayUpi = `tez://upi/pay?${params}`;
       const phonepeUpi = `phonepe://pay?${params}`;
       const paytmUpi = `paytmmp://pay?${params}`;
 
       if (mode === "upi") {
-        updateTracker("⏳ Tracker: Scan QR or pay via UPI app, then enter 12-digit UTR to verify.", "");
+        updateTracker("⏳ Tracker: Scan QR or pay ₹" + activePayable + " via UPI app, then enter 12-digit UTR.", "");
         body.innerHTML = `
           <div class="qr-split">
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=${encodeURIComponent(genericUpi)}" alt="UPI QR ${UPI_ID}" style="width:120px;height:120px;border-radius:10px;margin:auto;display:block" />
@@ -716,8 +766,8 @@
             <input id="cardCvv" placeholder="CVV *" maxlength="3" type="password" />
           </div>`;
       } else {
-        updateTracker("💵 Counter Mode: Pay ₹" + finalTotal + " at the Noir & Bean pickup counter.", "");
-        body.innerHTML = `<p style="background:var(--tint);padding:12px;border-radius:10px;font-size:0.9rem">Pay <b>₹${finalTotal}</b> via Cash or UPI at the Noir &amp; Bean counter upon pickup.</p>`;
+        updateTracker("💵 Counter Mode: Pay ₹" + activePayable + " at the Noir & Bean reception counter.", "");
+        body.innerHTML = `<p style="background:var(--tint);padding:12px;border-radius:10px;font-size:0.9rem">Pay <b>₹${activePayable}</b> via Cash or UPI at the Noir &amp; Bean reception desk.</p>`;
       }
     }
 
@@ -753,21 +803,71 @@
           appUsed = "Cash at Counter";
         }
 
-        updateTracker("✅ Payment Verified! Generating digital receipt...", "ok");
+        updateTracker("✅ Payment Verified! Issuing receipt...", "ok");
         setTimeout(() => {
           closePaymentModal();
-          const orderId = "NB-" + Math.floor(1000 + Math.random() * 9000);
           const timeStr = new Date().toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" });
+          const statusLabel = payMode === "cash" ? "PAY AT COUNTER" : "PAID (VERIFIED)";
+
+          if (checkoutContext === "booking" && pendingBooking) {
+            const bookingId = "NB-TBL-" + Math.floor(1000 + Math.random() * 9000);
+            const bkRecord = {
+              bookingId,
+              timeStr,
+              name: pendingBooking.name,
+              phone: pendingBooking.phone,
+              date: pendingBooking.date,
+              guests: pendingBooking.guests,
+              slot: pendingBooking.slot,
+              amount: BOOKING_FEE,
+              refId,
+              statusLabel
+            };
+            bookingLogs.unshift(bkRecord);
+            localStorage.setItem("nb_booking_logs", JSON.stringify(bookingLogs));
+            renderBookingHistory();
+
+            paymentLogs.unshift({
+              orderId: bookingId,
+              timeStr,
+              custName: pendingBooking.name,
+              custPhone: pendingBooking.phone,
+              appUsed: "Table Booking • " + appUsed,
+              refId,
+              amount: BOOKING_FEE,
+              statusLabel
+            });
+            localStorage.setItem("nb_payment_logs", JSON.stringify(paymentLogs));
+            updateLogBadge();
+
+            document.getElementById("recHeading").textContent = "✅ Table Reservation Confirmed";
+            document.getElementById("receiptBody").innerHTML = `
+              <div class="rl"><span><b>Booking ID:</b> ${bookingId}</span><span><b>Ref:</b> ${refId}</span></div>
+              <div class="rl"><span><b>Guest:</b> ${pendingBooking.name} (${pendingBooking.phone})</span><span>${timeStr}</span></div>
+              <div class="rl"><span><b>Date:</b> ${pendingBooking.date}</span><span><b>Party:</b> ${pendingBooking.guests}</span></div>
+              <div class="rl"><span><b>Slot:</b> ${pendingBooking.slot}</span></div>
+              <div class="rl"><span><b>Mode:</b> ${appUsed}</span><span><b>To:</b> ${UPI_ID}</span></div>
+              <hr style="margin:8px 0;border:none;border-top:1px dashed #b9c7be" />
+              <div class="rl"><span>Table Reservation Advance</span><span>₹${BOOKING_FEE}</span></div>
+              <div class="rl"><span>GST</span><span>₹0 (GST-Free)</span></div>
+              <div class="rl" style="font-weight:800;font-size:1.06rem;color:var(--forest);margin-top:4px">
+                <span>Total ${payMode === "cash" ? "Due" : "Paid"}</span><span>₹${BOOKING_FEE}</span>
+              </div>
+            `;
+            document.getElementById("receiptModal").classList.add("open");
+            return;
+          }
+
+          const orderId = "NB-" + Math.floor(1000 + Math.random() * 9000);
           const custName = document.getElementById("custName").value.trim();
           const custPhone = document.getElementById("custPhone").value.trim();
-          const statusLabel = payMode === "cash" ? "PAY AT COUNTER" : "PAID (VERIFIED)";
 
           paymentLogs.unshift({
             orderId,
             timeStr,
             custName,
             custPhone,
-            appUsed,
+            appUsed: "Order • " + appUsed,
             refId,
             amount: finalTotal,
             statusLabel
@@ -780,6 +880,7 @@
             return `<div class="rl"><span>${m.name} × ${c.qty}</span><span>₹${m.price * c.qty}</span></div>`;
           }).join("");
 
+          document.getElementById("recHeading").textContent = "✅ Payment Verified";
           document.getElementById("receiptBody").innerHTML = `
             <div class="rl"><span><b>Order ID:</b> ${orderId}</span><span><b>Ref:</b> ${refId}</span></div>
             <div class="rl"><span><b>Customer:</b> ${custName} (${custPhone})</span><span>${timeStr}</span></div>
@@ -804,6 +905,33 @@
       document.getElementById("receiptModal").classList.remove("open");
     }
 
+    function renderBookingHistory() {
+      document.getElementById("bkHistCount").textContent = bookingLogs.length;
+      const tbody = document.getElementById("bookingHistoryBody");
+      if (!bookingLogs.length) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:20px">No table reservations yet. Complete a ₹500 table booking above to see it here.</td></tr>`;
+        return;
+      }
+      tbody.innerHTML = bookingLogs.map(b => `
+        <tr>
+          <td><b>${b.bookingId}</b><br><small class="meta">${b.timeStr}</small></td>
+          <td><b>${b.name}</b><br><small class="meta">${b.phone}</small></td>
+          <td><b>${b.date}</b><br><small class="meta">${b.slot}</small></td>
+          <td>${b.guests}</td>
+          <td><b>₹${b.amount}</b></td>
+          <td><b>${b.refId}</b></td>
+          <td><span class="tag tag-veg">${b.statusLabel}</span></td>
+        </tr>
+      `).join("");
+    }
+
+    function clearBookingHistory() {
+      if (!confirm("Clear saved table booking history?")) return;
+      bookingLogs = [];
+      localStorage.removeItem("nb_booking_logs");
+      renderBookingHistory();
+    }
+
     function updateLogBadge() {
       document.getElementById("logCount").textContent = paymentLogs.length;
     }
@@ -812,7 +940,7 @@
       updateLogBadge();
       const tbody = document.getElementById("logsTableBody");
       if (!paymentLogs.length) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:20px">No transactions recorded yet. Complete a checkout to see payment logs here.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:20px">No transactions recorded yet.</td></tr>`;
         return;
       }
       tbody.innerHTML = paymentLogs.map(log => `
@@ -836,6 +964,7 @@
 
     renderMenu();
     renderCart();
+    renderBookingHistory();
     updateLogBadge();
   </script>
 </body>
